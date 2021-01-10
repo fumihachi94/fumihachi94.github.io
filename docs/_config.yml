@@ -26,12 +26,38 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://fumihachi94.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  fumihachi94
-serch: true
+minimal_mistakes_skin: default
+search: true
 
 # Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+
+permalink: /:categories/:title/
+paginate: 10
+paginate_apth: /page:num/
+timezone: Asia/Tokyo
+
+include:
+  - _pages
+
 theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name: "fumihachi94"
+  avatar: "/assets/images/icon.png"
+  bio: "Python, C++, etc"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/fumihachi94"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -52,3 +78,17 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
