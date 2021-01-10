@@ -1,0 +1,7 @@
+main:
+  - title: "Log"
+    url: /Log/
+  - title: "About"
+    url: /about/
+  - title: "Tags"
+    url: /tags/
