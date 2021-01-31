@@ -1,16 +1,16 @@
-// ---
-// # Only the main Sass file needs front matter (the dashes are enough)
-// ---
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
 
 @charset "utf-8";
 
-$base-font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+// $base-font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+// $base-font-size:   11px;
+// $small-font-size:  $base-font-size * 0.875;
+// $base-line-height: 1.5;
 
-$code-font-family:   Menlo, Monaco, Consolas, "DejaVu Sans Mono", "Liberation Mono", "Courier New", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif; 
-$code-font-size:     15px;
+// $code-font-family:   Menlo, Monaco, Consolas, "DejaVu Sans Mono", "Liberation Mono", "Courier New", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif; 
+// $code-font-size:     15px;
 
 /* solarized light syntax highlighting (base16) */
 // $base00: #fafafa !default;
@@ -87,22 +87,22 @@ See: https://github.com/mmistakes/minimal-mistakes/issues/1219#issuecomment-3268
   the "Breakpoints" section of "_variables.scss"?
 */
 html {
-  font-size: 8px; // change to whatever
+  font-size: 12px; // change to whatever
 
   @include breakpoint($small) {
-    font-size: 8px; // change to whatever
-  }
-
-  @include breakpoint($medium) {
-    font-size: 10px; // change to whatever
-  }
-
-  @include breakpoint($large) {
     font-size: 12px; // change to whatever
   }
 
-  @include breakpoint($x-large) {
+  @include breakpoint($medium) {
     font-size: 14px; // change to whatever
+  }
+
+  @include breakpoint($large) {
+    font-size: 16px; // change to whatever
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 18px; // change to whatever
   }
 
 }
