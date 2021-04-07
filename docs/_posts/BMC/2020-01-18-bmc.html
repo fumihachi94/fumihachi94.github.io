@@ -1,0 +1,1054 @@
+<!DOCTYPE html><html><head>
+      <title>2020-01-18-bmc</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////home/fumihachi/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.5.17/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.markdown-preview.markdown-preview code {
+  background-color: whitesmoke;
+}
+.markdown-preview.markdown-preview pre {
+  background-color: #f5f0f8;
+}
+.markdown-preview.markdown-preview body {
+  counter-reset: chapter;
+}
+.markdown-preview.markdown-preview h1 {
+  counter-reset: sub-chapter;
+}
+.markdown-preview.markdown-preview h2 {
+  counter-reset: section;
+}
+.markdown-preview.markdown-preview h3 {
+  counter-reset: sub-section;
+}
+.markdown-preview.markdown-preview h4 {
+  counter-reset: sub-sub-section;
+}
+.markdown-preview.markdown-preview .markdown-preview.markdown-preview h1::before {
+  counter-increment: chapter;
+  content: counter(chapter) ". ";
+}
+.markdown-preview.markdown-preview .markdown-preview.markdown-preview h2::before {
+  counter-increment: sub-chapter;
+  content: counter(chapter) "." counter(sub-chapter) ". ";
+}
+.markdown-preview.markdown-preview .markdown-preview.markdown-preview h3::before {
+  counter-increment: section;
+  content: counter(chapter) "." counter(sub-chapter) "." counter(section) ". ";
+}
+.markdown-preview.markdown-preview .markdown-preview.markdown-preview h4::before {
+  counter-increment: sub-section;
+  content: counter(chapter) "." counter(sub-chapter) "." counter(section) "." counter(sub-section) ".";
+}
+.markdown-preview.markdown-preview .markdown-preview.markdown-preview h5::before {
+  counter-increment: sub-sub-section;
+  content: counter(chapter) "." counter(sub-chapter) "." counter(section) "." counter(sub-section) "." counter(sub-sub-section) ".";
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="adas-software-update-trend">ADAS / Software Update Trend</h1>
+
+<div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="btn-group"><div class="run-btn btn"><span>&#x25B6;&#xFE0E;</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
+<li><a href="#adas--software-update-trend">ADAS / Software Update Trend</a></li>
+<li><a href="#2021331">2021/3/31</a>
+<ul>
+<li><a href="#vw--microsoft%E3%81%A8%E6%8F%90%E6%90%BA%E3%81%97%E8%87%AA%E5%8B%95%E9%81%8B%E8%BB%A2%E9%96%8B%E7%99%BA%E3%82%92%E5%8A%A0%E9%80%9F">VW : Microsoft&#x3068;&#x63D0;&#x643A;&#x3057;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x958B;&#x767A;&#x3092;&#x52A0;&#x901F;</a></li>
+<li><a href="#%E3%83%9E%E3%83%84%E3%83%80-%E8%B2%A9%E5%A3%B2%E5%BA%97%E5%85%A5%E5%BA%AB%E3%81%AB%E3%82%88%E3%82%8B%E7%84%A1%E5%84%9F%E6%9C%89%E7%B7%9A%E3%82%BD%E3%83%95%E3%83%88%E6%9B%B4%E6%96%B0%E3%82%92%E6%8F%90%E4%BE%9B">&#x30DE;&#x30C4;&#x30C0;&#xFF1A; &#x8CA9;&#x58F2;&#x5E97;&#x5165;&#x5EAB;&#x306B;&#x3088;&#x308B;&#x7121;&#x511F;&#x6709;&#x7DDA;&#x30BD;&#x30D5;&#x30C8;&#x66F4;&#x65B0;&#x3092;&#x63D0;&#x4F9B;</a></li>
+<li><a href="#bmw-idrive8%E3%81%8B%E3%82%89adas%E6%A9%9F%E8%83%BDota%E5%8F%AF%E8%83%BD%E3%81%AB">BMW: iDrive8&#x304B;&#x3089;ADAS&#x6A5F;&#x80FD;OTA&#x53EF;&#x80FD;&#x306B;</a></li>
+</ul>
+</li>
+<li><a href="#2021316">2021/3/16</a>
+<ul>
+<li><a href="#tesla-fsd%E3%81%AF%E8%B2%B7%E6%9B%BF%E3%81%88%E3%81%A7%E5%BC%95%E3%81%8D%E7%B6%99%E3%81%92%E3%81%AA%E3%81%84">Tesla FSD&#x306F;&#x8CB7;&#x66FF;&#x3048;&#x3067;&#x5F15;&#x304D;&#x7D99;&#x3052;&#x306A;&#x3044;</a></li>
+<li><a href="#tesla-china--fsd%E4%BB%98%E3%81%8D%E8%BB%8A%E4%B8%A1%E3%81%AE%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E3%81%A7%E6%AC%A1%E5%9B%9Efsd%E5%8D%8A%E9%A1%8D">Tesla china : FSD&#x4ED8;&#x304D;&#x8ECA;&#x4E21;&#x306E;&#x8CB7;&#x3044;&#x66FF;&#x3048;&#x3067;&#x6B21;&#x56DE;FSD&#x534A;&#x984D;</a></li>
+</ul>
+</li>
+<li><a href="#202138">2021/3/8</a>
+<ul>
+<li><a href="#%E8%87%AA%E5%8B%95%E9%81%8B%E8%BB%A2lv3%E3%81%AE%E5%8B%95%E5%90%91">&#x81EA;&#x52D5;&#x904B;&#x8EE2;Lv3&#x306E;&#x52D5;&#x5411;</a></li>
+<li><a href="#vw-id3id4--ota%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E6%9B%B4%E6%96%B0%E3%82%92%E4%BB%8A%E5%A4%8F%E3%81%8B%E3%82%89%E6%AC%A7%E5%B7%9E%E3%81%A7%E9%96%8B%E5%A7%8B">VW ID.3/ID.4 : OTA&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x66F4;&#x65B0;&#x3092;&#x4ECA;&#x590F;&#x304B;&#x3089;&#x6B27;&#x5DDE;&#x3067;&#x958B;&#x59CB;</a></li>
+<li><a href="#ford-mustang-mach-e--%E4%B8%80%E9%83%A8%E6%89%80%E6%9C%89%E8%80%85%E9%99%90%E5%AE%9A%E3%81%A7ota%E3%83%99%E3%83%BC%E3%82%BF%E9%85%8D%E4%BF%A1%E3%81%AE%E5%AE%9F%E6%96%BD">Ford Mustang Mach-E : &#x4E00;&#x90E8;&#x6240;&#x6709;&#x8005;&#x9650;&#x5B9A;&#x3067;OTA&#x30D9;&#x30FC;&#x30BF;&#x914D;&#x4FE1;&#x306E;&#x5B9F;&#x65BD;</a></li>
+<li><a href="#audi%E3%81%AE%E3%83%93%E3%83%83%E3%82%B0%E3%83%87%E3%83%BC%E3%82%BF%E6%B4%BB%E7%94%A8%E8%B7%AF%E9%9D%A2%E7%8A%B6%E6%85%8B%E3%81%8B%E3%82%89%E8%AD%A6%E5%91%8A%E3%82%92%E8%A1%8C%E3%81%86">Audi&#x306E;&#x30D3;&#x30C3;&#x30B0;&#x30C7;&#x30FC;&#x30BF;&#x6D3B;&#x7528;&#xFF1A;&#x8DEF;&#x9762;&#x72B6;&#x614B;&#x304B;&#x3089;&#x8B66;&#x544A;&#x3092;&#x884C;&#x3046;</a></li>
+</ul>
+</li>
+<li><a href="#2021219">2021/2/19</a>
+<ul>
+<li><a href="#bosch-microsoft-%E3%81%8C%E5%85%B1%E5%90%8C%E3%81%A7ota-su%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%92%E9%96%8B%E7%99%BA">Bosch, Microsoft &#x304C;&#x5171;&#x540C;&#x3067;OTA-SU&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3092;&#x958B;&#x767A;</a></li>
+<li><a href="#mercedes130%E4%B8%87%E8%BB%8A%E4%B8%A1%E3%81%AE%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%AB%E3%82%92su%E5%AF%BE%E5%BF%9Csos%E6%A9%9F%E8%83%BD">Mercedes&#xFF1A;130&#x4E07;&#x8ECA;&#x4E21;&#x306E;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x3092;SU&#x5BFE;&#x5FDC;&#xFF08;SOS&#x6A5F;&#x80FD;&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#2021217">2021/2/17</a>
+<ul>
+<li><a href="#ford-mustang-mach-e%E3%81%AEota%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0hmi">Ford Mustang MACH-E&#x306E;OTA&#x30B7;&#x30B9;&#x30C6;&#x30E0;/HMI</a></li>
+<li><a href="#%E5%A4%A9%E4%B8%8B%E4%B8%80%E5%93%81%E8%AA%A4%E8%AA%8D%E8%AD%98%E5%95%8F%E9%A1%8C%E3%81%A8ota%E6%8A%80%E8%A1%93%E3%81%B8%E3%81%AE%E6%9C%9F%E5%BE%85">&#x300C;&#x5929;&#x4E0B;&#x4E00;&#x54C1;&#x300D;&#x8AA4;&#x8A8D;&#x8B58;&#x554F;&#x984C;&#x3068;OTA&#x6280;&#x8853;&#x3078;&#x306E;&#x671F;&#x5F85;</a></li>
+</ul>
+</li>
+<li><a href="#202124">2021/2/4</a>
+<ul>
+<li><a href="#%E9%9F%93%E5%9B%BD%E7%99%BA%E3%81%AE%E7%89%A9%E4%BD%93%E8%AA%8D%E8%AD%98%E3%82%BD%E3%83%95%E3%83%88svnet%E3%81%8C%E4%B8%96%E7%95%8C880%E4%B8%87%E8%BB%8A%E4%B8%A1%E3%81%A7%E6%8E%A1%E7%94%A8">&#x97D3;&#x56FD;&#x767A;&#x306E;&#x7269;&#x4F53;&#x8A8D;&#x8B58;&#x30BD;&#x30D5;&#x30C8;&#x300C;SVNet&#x300D;&#x304C;&#x4E16;&#x754C;880&#x4E07;&#x8ECA;&#x4E21;&#x3067;&#x63A1;&#x7528;</a></li>
+</ul>
+</li>
+<li><a href="#2021131">2021/1/31</a>
+<ul>
+<li><a href="#tesla-model-sx-%E3%81%AE%E5%86%85%E8%A3%85%E3%82%92%E4%B8%80%E6%96%B0214-lo%E4%BA%88%E5%AE%9A">Tesla Model-S/X &#x306E;&#x5185;&#x88C5;&#x3092;&#x4E00;&#x65B0;&#xFF08;&apos;21/4 LO&#x4E88;&#x5B9A;&#xFF09;</a></li>
+</ul>
+</li>
+<li><a href="#2021127">2021/1/27</a>
+<ul>
+<li><a href="#tesla-fsd%E3%82%92%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E5%8C%96%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E7%99%BA%E8%A1%A8">Tesla FSD&#x3092;&#x30B5;&#x30D6;&#x30B9;&#x30AF;&#x5316;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x767A;&#x8868;</a></li>
+<li><a href="#%E3%81%9D%E3%81%AE%E4%BB%96">&#x305D;&#x306E;&#x4ED6;</a></li>
+</ul>
+</li>
+<li><a href="#2021126">2021/1/26</a>
+<ul>
+<li><a href="#excelfore%E3%81%AEota%E3%81%AE%E6%8A%80%E8%A1%93">Excelfore&#x306E;OTA&#x306E;&#x6280;&#x8853;</a></li>
+<li><a href="#hondagm%E3%81%A8%E5%9B%BD%E5%86%85%E3%81%A7%E8%87%AA%E5%8B%95%E9%81%8B%E8%BB%A2%E3%83%A2%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%AE%9F%E8%A8%BC%E5%AE%9F%E9%A8%93%E9%96%8B%E5%A7%8B">Honda&#xFF1A;GM&#x3068;&#x56FD;&#x5185;&#x3067;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30E2;&#x30D3;&#x30EA;&#x30C6;&#x30A3;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x5B9F;&#x8A3C;&#x5B9F;&#x9A13;&#x958B;&#x59CB;</a></li>
+</ul>
+</li>
+<li><a href="#2021119">2021/1/19</a>
+<ul>
+<li><a href="#mercedes-mm%E7%B3%BB%E8%AA%B2%E9%87%91%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Mercedes MM&#x7CFB;&#x8AB2;&#x91D1;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</a></li>
+<li><a href="#tesla-muc%E6%AC%A0%E9%99%A5%E3%81%A7158%E4%B8%87%E5%8F%B0%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%AB%E8%A6%81%E8%AB%8B">Tesla MUC&#x6B20;&#x9665;&#x3067;15.8&#x4E07;&#x53F0;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x8981;&#x8ACB;</a></li>
+</ul>
+</li>
+<li><a href="#2021118">2021/1/18</a>
+<ul>
+<li><a href="#nio-et7%E3%82%92%E7%99%BA%E8%A1%A8">NIO et7&#x3092;&#x767A;&#x8868;</a></li>
+<li><a href="#%E6%97%A5%E7%94%A3-%E3%82%A2%E3%83%AA%E3%82%A2%E3%81%ABota%E3%82%92%E5%B0%8E%E5%85%A5">&#x65E5;&#x7523; &#x30A2;&#x30EA;&#x30A2;&#x306B;OTA&#x3092;&#x5C0E;&#x5165;</a></li>
+<li><a href="#mack-trucks%E3%81%8Cota%E3%82%92%E5%B0%8E%E5%85%A5">Mack Trucks&#x304C;OTA&#x3092;&#x5C0E;&#x5165;</a></li>
+<li><a href="#sony-vision-s">Sony Vision-S</a></li>
+</ul>
+</li>
+</ul>
+<h1 class="mume-header" id="2021331">2021/3/31</h1>
+
+<h2 class="mume-header" id="vw-microsoft%E3%81%A8%E6%8F%90%E6%90%BA%E3%81%97%E8%87%AA%E5%8B%95%E9%81%8B%E8%BB%A2%E9%96%8B%E7%99%BA%E3%82%92%E5%8A%A0%E9%80%9F">VW : Microsoft&#x3068;&#x63D0;&#x643A;&#x3057;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x958B;&#x767A;&#x3092;&#x52A0;&#x901F;</h2>
+
+<p>&#x30D5;&#x30A9;&#x30EB;&#x30AF;&#x30B9;&#x30EF;&#x30FC;&#x30B2;&#x30F3;&#x306F;&#x30DE;&#x30A4;&#x30AF;&#x30ED;&#x30BD;&#x30D5;&#x30C8;&#x3068;&#x7D44;&#x307F;&#x3001;&#x300C;&#x81EA;&#x793E;&#x306E;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x8ECA;&#x4E21;&#x30C6;&#x30AF;&#x30CE;&#x30ED;&#x30B8;&#x30FC;&#x3092;&#x524D;&#x9032;&#x3055;&#x305B;&#x308B;&#x300D;&#x3068;&#x767A;&#x8868;&#xFF08;2021&#x5E74;2&#x6708;11&#x65E5;&#xFF09;&#x3002;<br>
+VW&#x3068;&#x30DE;&#x30A4;&#x30AF;&#x30ED;&#x30BD;&#x30D5;&#x30C8;&#x306F;&#x3053;&#x306E;&#x81EA;&#x52D5;&#x8ECA;&#x7528;&#x30AF;&#x30E9;&#x30A6;&#x30C9;&#x306E;&#x305F;&#x3081;2018&#x5E74;&#x306B;&#x5354;&#x696D;&#x3092;&#x59CB;&#x3081;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;&#x4ECA;&#x5E74;&#x5F8C;&#x534A;&#x306B;&#x8ECA;&#x4E21;&#x7FA4;&#x306E;&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30C6;&#x30B9;&#x30C8;&#x3059;&#x308B;&#x8A08;&#x753B;&#x3092;&#x7ACB;&#x3066;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;VW&#x306F;ID.4&#x3068;2022&#x5E74;&#x306B;&#x767A;&#x58F2;&#x3055;&#x308C;&#x308B;ID.6&#x3067;&#x65B0;&#x3057;&#x3044;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x3092;&#x4F7F;&#x3046;&#x4E88;&#x5B9A;&#x3067;&#x3059;&#x3002;</p>
+<p><a href="https://blog.evsmart.net/vw/volkswagen-microsoft-partner-to-develop-autonomous-driving-software/">&#x30D5;&#x30A9;&#x30EB;&#x30AF;&#x30B9;&#x30EF;&#x30FC;&#x30B2;&#x30F3;&#x304C;&#x30DE;&#x30A4;&#x30AF;&#x30ED;&#x30BD;&#x30D5;&#x30C8;&#x3068;&#x7D44;&#x3093;&#x3067;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x958B;&#x767A;&#x3067;&#x5DFB;&#x304D;&#x8FD4;&#x3057;&#x3092;&#x56F3;&#x308B; | EVsmart&#x30D6;&#x30ED;&#x30B0;</a></p>
+<h2 class="mume-header" id="%E3%83%9E%E3%83%84%E3%83%80-%E8%B2%A9%E5%A3%B2%E5%BA%97%E5%85%A5%E5%BA%AB%E3%81%AB%E3%82%88%E3%82%8B%E7%84%A1%E5%84%9F%E6%9C%89%E7%B7%9A%E3%82%BD%E3%83%95%E3%83%88%E6%9B%B4%E6%96%B0%E3%82%92%E6%8F%90%E4%BE%9B">&#x30DE;&#x30C4;&#x30C0;&#xFF1A; &#x8CA9;&#x58F2;&#x5E97;&#x5165;&#x5EAB;&#x306B;&#x3088;&#x308B;&#x7121;&#x511F;&#x6709;&#x7DDA;&#x30BD;&#x30D5;&#x30C8;&#x66F4;&#x65B0;&#x3092;&#x63D0;&#x4F9B;</h2>
+
+<p>&#x30DE;&#x30C4;&#x30C0;&#x306F;2021/2/19&#x3001;&#x65E2;&#x5B58;&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x5411;&#x3051;&#x306B;&#x3001;&#x5236;&#x5FA1;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;&#x66F4;&#x65B0;&#x3067;&#x5546;&#x54C1;&#x6027;&#x3092;&#x5411;&#x4E0A;&#x3059;&#x308B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x300C;MAZDA SPIRIT UPGRADE&#x300D;&#x3092;&#x958B;&#x59CB;&#x3057;&#x305F;&#x3002;<br>
+&#x307E;&#x305F;&#x3001;3/10&#x306B;&#x30DE;&#x30C4;&#x30C0;MDI&#xFF06;IT&#x672C;&#x90E8;&#x4E3B;&#x67FB;&#xFF08;&#x5C71;&#xFA11;&#x6C0F;&#xFF09;&#x304C;&#x4ECA;&#x5F8C;&#x306E;OTA&#x66F4;&#x65B0;&#x306B;&#x3064;&#x3044;&#x3066;&#x3082;&#x516C;&#x6F14;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304B;&#x3089;&#x3001;&#x8FD1;&#x3044;&#x3046;&#x3061;&#x306B;OTA&#x3092;&#x5C0E;&#x5165;&#x3057;&#x3066;&#x3044;&#x304F;&#x3068;&#x898B;&#x3089;&#x308C;&#x3001;&#x4ECA;&#x56DE;&#x306E;&#x6709;&#x7DDA;&#x30EA;&#x30D7;&#x30ED;&#x306F;&#x305D;&#x306E;&#x5E03;&#x77F3;&#x3068;&#x898B;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<ul>
+<li>2/19&#x3088;&#x308A;<strong>&#x7121;&#x511F;&#x3067;</strong>&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x63D0;&#x4F9B;</li>
+<li>&#x5BFE;&#x8C61;&#x306E;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306F;&#x6700;&#x5BC4;&#x308A;&#x306E;&#x8CA9;&#x58F2;&#x5E97;&#x3067;&#x5236;&#x5FA1;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306E;<strong>&#x6709;&#x7DDA;&#x66F4;&#x65B0;</strong>&#x3092;&#x884C;&#x3046;</li>
+<li>&#x5BFE;&#x8C61;&#x8ECA;&#x4E21;&#xFF1A;&#x30DE;&#x30C4;&#x30C0;3 &#x3068; CX-30&#x3000;&#x306E;&#x521D;&#x671F;&#x30E2;&#x30C7;&#x30EB;</li>
+<li>&#x66F4;&#x65B0;&#x5185;&#x5BB9;
+<ul>
+<li>&#x30D1;&#x30EF;&#x30C8;&#x30EC;&#xFF1A;
+<ul>
+<li>&#x30A8;&#x30F3;&#x30B8;&#x30F3;&#x3068;AT&#x306E;&#x5236;&#x5FA1;&#x30BD;&#x30D5;&#x30C8;&#xFF08;&#x30A2;&#x30AF;&#x30BB;&#x30EB;&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;/&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x6027;&#x80FD;&#x5411;&#x4E0A;&#xFF09;</li>
+</ul>
+</li>
+<li>&#x904B;&#x8EE2;&#x652F;&#x63F4;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#xFF1A;
+<ul>
+<li>ACC+LTA&#x642D;&#x8F09;&#x8ECA;&#xFF08;&#x4F5C;&#x52D5;&#x901F;&#x5EA6;&#x4E0A;&#x9650;&#x3092;55km/h&#x2192;&#x9AD8;&#x901F;&#x57DF;&#x307E;&#x3067;&#x5F15;&#x304D;&#x4E0A;&#x3052;&#xFF09;</li>
+<li>ACC&#xFF08;&#x8FFD;&#x5F93;&#x6642;&#x306E;&#x52A0;&#x6E1B;&#x901F;&#x30D5;&#x30A3;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x5411;&#x4E0A;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://newsroom.mazda.com/ja/publicity/release/2021/202102/210219a.html">MAZDA NEWSROOM&#x30DE;&#x30C4;&#x30C0;&#x3001;&#x5546;&#x54C1;&#x6027;&#x5411;&#x4E0A;&#x3092;&#x76EE;&#x7684;&#x3068;&#x3057;&#x305F;&#x5236;&#x5FA1;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306A;&#x3069;&#x306E;&#x6700;&#x65B0;&#x5316;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x958B;&#x59CB;&#xFF5C;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x30EA;&#x30EA;&#x30FC;&#x30B9;</a></li>
+<li><a href="https://monoist.atmarkit.co.jp/mn/articles/2102/22/news056.html">&#x8CFC;&#x5165;&#x5F8C;&#x306E;&#x8ECA;&#x4E21;&#x304C;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x66F4;&#x65B0;&#x3067;&#x6027;&#x80FD;&#x5411;&#x4E0A;&#x3001;&#x30DE;&#x30C4;&#x30C0;&#x304C;2&#x8ECA;&#x7A2E;&#x3067;&#x63D0;&#x4F9B;&#x958B;&#x59CB;&#xFF1A;&#x8ECA;&#x8F09;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2; - MONOist</a></li>
+<li><a href="https://response.jp/article/2021/03/11/343878.html">&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6642;&#x4EE3;&#x3092;&#x5F71;&#x3067;&#x652F;&#x3048;&#x308B;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;&#x3068;OTA&#x3067;&#x30EA;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x30DE;&#x30C4;&#x30C0;&#x2026;ReVision&#x30E2;&#x30D3;&#x30EA;&#x30C6;&#x30A3;&#x30B5;&#x30DF;&#x30C3;&#x30C8;2021 | &#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#xFF08;Response.jp&#xFF09;</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="bmw-idrive8%E3%81%8B%E3%82%89adas%E6%A9%9F%E8%83%BDota%E5%8F%AF%E8%83%BD%E3%81%AB">BMW: iDrive8&#x304B;&#x3089;ADAS&#x6A5F;&#x80FD;OTA&#x53EF;&#x80FD;&#x306B;</h2>
+
+<ul>
+<li>iDrive8&#x642D;&#x8F09;&#x4E88;&#x5B9A;&#x8ECA;&#x4E21; (EV)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x8ECA;&#x7A2E;</th>
+<th>&#x8CA9;&#x58F2;&#x6642;&#x671F;</th>
+<th>&#x65E5;&#x672C;&#x5C0E;&#x5165;&#x6642;&#x671F;</th>
+<th>&#x5099;&#x8003;</th>
+<th>&#x30B5;&#x30A4;&#x30C8;&#x30EA;&#x30F3;&#x30AF;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.bmw.co.jp/ja/all-models/bmw-i/i4/2021/bmw-i4-preview.html">i4</a></td>
+<td>2022</td>
+<td>2022&#x5E74;&#x6625;&#x4EE5;&#x964D;</td>
+<td>EV-&#x30B0;&#x30E9;&#x30F3;&#x30AF;&#x30FC;&#x30DA;</td>
+<td><a href="https://online-store.bmw.co.jp/#/pre-book/93/106">[*1]</a></td>
+</tr>
+<tr>
+<td><a href="https://www.bmw.co.jp/ja/all-models/bmw-i/bmw-ix-new/2020/Highlights.html">iX</a></td>
+<td>US: 2021</td>
+<td>2021&#x5E74;&#x4EE5;&#x964D;</td>
+<td>EV-SUV</td>
+<td><a href="https://online-store.bmw.co.jp/#/pre-book/93/95?vc=Qk1XMTYwNzkwNTEwMDgzMg%3D%3D">[*2]</a> <a href="https://www.jdpower.com/cars/new-car-previews/2022-bmw-ix-preview?make=bmw&amp;model=ix">[*3]</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>OTA <a href="https://www.jdpower.com/automotive-news/electric-bmw-suv-first-of-many-ultimate-driving-evs?make=bmw&amp;model=">[*4]</a> <a href="https://www.jdpower.com/cars/shopping-guides/what-is-bmw-idrive-8">[*5]</a> <a href="https://response.jp/article/2021/01/18/342225.html">[*6]</a> <a href="https://youtu.be/M5U1Fb_Z7Zs?t=602">[Youtube-BMW&#x516C;&#x5F0F;]</a></p>
+<ul>
+<li>5G&#x5BFE;&#x5FDC;</li>
+<li>&#x8FFD;&#x52A0;&#x8CFC;&#x5165; or Short-term&#x30B5;&#x30D6;&#x30B9;&#x30AF;&#x306B;&#x3088;&#x308B;&#x8FFD;&#x52A0;&#x6A5F;&#x80FD;&#x3092;&#x63D0;&#x4F9B;&#x4E88;&#x5B9A;</li>
+<li>ADAS&#x6A5F;&#x80FD;&#x306A;&#x3069;&#x306E;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x66F4;&#x65B0;&#x304C;&#x53EF;&#x80FD;</li>
+<li>&#x8ECA;&#x8F09;Ethernet : Max30Gbit</li>
+<li>20&#x5206;&#x672A;&#x6E80;&#x3067;&#x306E;OTA&#x66F4;&#x65B0;</li>
+</ul>
+</li>
+<li>
+<p>iDrive8</p>
+<ul>
+<li>BMW ID&#x306B;&#x3088;&#x308B;&#x30D1;&#x30FC;&#x30BD;&#x30CA;&#x30E9;&#x30A4;&#x30BA;&#x6A5F;&#x80FD;
+<ul>
+<li>&#x8ECA;&#x8F09;&#x5668;&#x306E;&#x3042;&#x3089;&#x3086;&#x308B;&#x8A2D;&#x5B9A;&#x3092;&#x4E00;&#x62EC;&#x7BA1;&#x7406;</li>
+<li>&#x8ECA;&#x4E21;&#x3092;&#x5909;&#x3048;&#x3066;&#x3082;ID&#x306B;&#x7D10;&#x4ED8;&#x3044;&#x3066;&#x5F15;&#x304D;&#x7D99;&#x304E;&#x304C;&#x53EF;&#x80FD;</li>
+</ul>
+</li>
+<li>&#x30C7;&#x30B8;&#x30BF;&#x30EB;&#x30AD;&#x30FC;&#x30FB;&#x30D7;&#x30E9;&#x30B9;
+<ul>
+<li>iPhone&#x306E;&#x30D0;&#x30C3;&#x30C6;&#x30EA;&#x30FC;&#x6B8B;&#x91CF;&#x304C;&#x4F4E;&#x4E0B;&#x3057;&#x3066;&#x3082;&#x6700;&#x5927;5&#x6642;&#x9593;&#x30AD;&#x30FC;&#x3068;&#x3057;&#x3066;&#x5229;&#x7528;&#x53EF;&#x80FD;(=&#x30D1;&#x30EF;&#x30FC;&#x30EA;&#x30B6;&#x30FC;&#x30D6;&#x6A5F;&#x80FD;)</li>
+<li>iMessage&#x7D4C;&#x7531;&#x3067;&#x6700;&#x5927;5&#x4EBA;&#x3068;&#x30C7;&#x30B8;&#x30BF;&#x30EB;&#x30AD;&#x30FC;&#x306E;&#x5171;&#x6709;&#x53EF;&#x80FD;</li>
+<li>Apple Watch&#x3068;&#x306E;&#x9023;&#x643A;&#x53EF;&#x80FD;</li>
+<li>iPhone U1&#x30C1;&#x30C3;&#x30D7;&#x642D;&#x8F09;&#x306E;<a href="https://news.mynavi.jp/article/20190912-smartphone_word/#:~:text=UWB%E3%81%A8%E3%81%AF%E3%80%8CUltra%20Wide,%E5%B0%91%E3%81%AA%E3%81%84%E3%81%93%E3%81%A8%E3%81%8C%E7%89%B9%E5%BE%B4%E3%81%A7%E3%81%99%E3%80%82">UWB&#x6280;&#x8853;</a>&#x3067;&#x30EA;&#x30EC;&#x30FC;&#x30A2;&#x30BF;&#x30C3;&#x30AF;&#x304C;&#x4E0D;&#x53EF;&#x80FD;&#x306B;&#xFF08;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;&#x5F37;&#x5316;&#xFF09;</li>
+</ul>
+</li>
+<li>3&#x3064;&#x306E;Driving-Mode<br>
+&#x203B;OTA&#x3067;&#x30E2;&#x30FC;&#x30C9;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;
+<table>
+<thead>
+<tr>
+<th colspan="3"></th>
+
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Efficient</td>
+<td>&#x30A8;&#x30CD;&#x30EB;&#x30AE;&#x30FC;&#x52B9;&#x7387;&#x91CD;&#x8996;&#x306E;&#x30E2;&#x30FC;&#x30C9;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sport</td>
+<td>&#x52A0;&#x901F;&#x611F;&#x3068;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;&#x91CD;&#x8996;&#x306E;&#x30E2;&#x30FC;&#x30C9;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Personal</td>
+<td>&#x500B;&#x4EBA;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x53EF;&#x80FD;&#x306A;&#x30E2;&#x30FC;&#x30C9;</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>&#x30BB;&#x30F3;&#x30BF;&#x30FC;&#x30B3;&#x30F3;&#x30BD;&#x30FC;&#x30EB;&#xFF08;HMI&#xFF09;&#x64CD;&#x4F5C;&#x306A;&#x3069;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x52D5;&#x753B;&#x304C;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x3044;
+<ul>
+<li><a href="https://www.youtube.com/watch?v=M7XijeIorQc">&#x3010;YouTube&#x3011;World Premiere of the all-new BMW iDrive | March 15, 2021</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6A5F;&#x80FD;(ADAS)</p>
+<p>BMW&#x306F;&#x3001;iX&#x3067;&#x5C06;&#x6765;&#x7684;&#x306B;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6A5F;&#x80FD;&#x3092;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x6E96;&#x5099;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3092;&#x793A;&#x5506;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<blockquote>
+<p>The company did explain that the iX offers 20 times the computing speed of a current BMW and that it is ready to support the automated driving technologies of the future.<br>
+&#x51FA;&#x5178;&#xFF1A;<a href="https://www.jdpower.com/cars/new-car-previews/2022-bmw-ix-preview?make=bmw&amp;model=ix">2022 BMW iX Preview</a></p>
+</blockquote>
+<img src="img/bmw_2021-03-31%2022-35-46.png" width="65%">
+<p>(i4,iX&#x306E;&#x8ECA;&#x4E21;&#x5916;&#x89B3;&#x56F3;&#x3000;&#x5DE6;&#xFF1A;iX, &#x53F3;&#xFF1A;i4)</p>
+</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.jdpower.com/automotive-news/electric-bmw-suv-first-of-many-ultimate-driving-evs?make=bmw&amp;model=">Electric BMW SUV First of Many Ultimate Driving EVs</a></li>
+<li><a href="https://www.jdpower.com/cars/shopping-guides/what-is-bmw-idrive-8">What is BMW iDrive 8?</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="2021316">2021/3/16</h1>
+
+<h2 class="mume-header" id="tesla-fsd%E3%81%AF%E8%B2%B7%E6%9B%BF%E3%81%88%E3%81%A7%E5%BC%95%E3%81%8D%E7%B6%99%E3%81%92%E3%81%AA%E3%81%84">Tesla FSD&#x306F;&#x8CB7;&#x66FF;&#x3048;&#x3067;&#x5F15;&#x304D;&#x7D99;&#x3052;&#x306A;&#x3044;</h2>
+
+<p>&quot;&#x30C6;&#x30B9;&#x30AB;&#x30B9;&quot;&#x3068;&#x3044;&#x3046;Tesla&#x306B;&#x95A2;&#x3059;&#x308B;&#x56FD;&#x5185;&#x306E;&#x60C5;&#x5831;&#x30B5;&#x30A4;&#x30C8;(&#x500B;&#x4EBA;&#x30B5;&#x30A4;&#x30C8;)&#x304C;&#x3042;&#x308A;&#x3001;&#x305D;&#x306E;&#x4E2D;&#x306B;FSD&#x306E;&#x5F15;&#x304D;&#x7D99;&#x304E;&#x306B;&#x95A2;&#x3059;&#x308B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x304C;&#x3042;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;&#x3053;&#x306E;<a href="https://teskas.net/forums/topic/42159/#post-42218">&#x30B3;&#x30E1;&#x30F3;&#x30C8;</a>&#x304C;&#x6295;&#x7A3F;&#x3055;&#x308C;&#x305F;(2021/2/21)&#x6642;&#x70B9;&#x3067;&#x306F;&#x3001;&#x65B0;&#x8ECA;&#x8CFC;&#x5165;&#x3057;&#x3066;&#x3082;FSD&#x306F;&#x5F15;&#x304D;&#x7D99;&#x3052;&#x306A;&#x3044;&#x306E;&#x3067;&#x518D;&#x5EA6;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x8CFC;&#x5165;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;&#x3064;&#x307E;&#x308A;&#x3001;FSD&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306F;Tesla&#x30A2;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;VIN&#x306B;&#x7D10;&#x3065;&#x3044;&#x3066;&#x3044;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#xFF08;&#x516C;&#x5F0F;&#x60C5;&#x5831;&#x3067;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x4FE1;&#x983C;&#x6027;&#x306F;&#x4F4E;&#x3044;&#x3067;&#x3059;&#x304C;&#x2026;&#xFF09;&#x3002;</p>
+<p>&#x307E;&#x305F;&#x3001;&#x3053;&#x3061;&#x3089;&#x306E;<a href="https://teskas.net/forums/topic/42159/#post-42229">&#x30B3;&#x30E1;&#x30F3;&#x30C8;</a>(2021/2/22)&#x3067;&#x306F;&#x3001;&#x30C6;&#x30B9;&#x30E9;&#x306E;&#x4E0B;&#x53D6;&#x308A;&#x3067;&#x306F;FSD&#x306F;&#x67FB;&#x5B9A;&#x306B;&#x52A0;&#x5473;&#x3055;&#x308C;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://teskas.net/forums/topic/42159/">&#x65E2;&#x5B58;&#x30E2;&#x30C7;&#x30EB;3&#x30AA;&#x30FC;&#x30CA;&#x30FC;&#x3001;&#x65B0;&#x578B;&#x3078;&#x306E;&#x8CB7;&#x3044;&#x66FF;&#x3048;&#x96D1;&#x8AC7;&#x5834;&#x6240; | &#x30C6;&#x30B9;&#x30AB;&#x30B9;</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="tesla-china-fsd%E4%BB%98%E3%81%8D%E8%BB%8A%E4%B8%A1%E3%81%AE%E8%B2%B7%E3%81%84%E6%9B%BF%E3%81%88%E3%81%A7%E6%AC%A1%E5%9B%9Efsd%E5%8D%8A%E9%A1%8D">Tesla china : FSD&#x4ED8;&#x304D;&#x8ECA;&#x4E21;&#x306E;&#x8CB7;&#x3044;&#x66FF;&#x3048;&#x3067;&#x6B21;&#x56DE;FSD&#x534A;&#x984D;</h2>
+
+<p>&#x4E0A;&#x8A18;&#x540C;&#x69D8;&#x3001;&quot;&#x30C6;&#x30B9;&#x30AB;&#x30B9;&quot;&#x60C5;&#x5831;&#x3067;&#x3059;&#x304C;&#x4ECA;&#x56DE;&#x306F;&#x51FA;&#x5178;&#x304C;&#x3064;&#x3044;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x4FE1;&#x7528;&#x3067;&#x304D;&#x308B;&#x60C5;&#x5831;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;(2021/1/1&#x306E;&#x8A18;&#x4E8B;)&#x3002;</p>
+<p>&#x30C6;&#x30B9;&#x30E9;&#x30C1;&#x30E3;&#x30A4;&#x30CA;&#x306F;FSD&#x4ED8;&#x304D;&#x8ECA;&#x4E21;&#x304B;&#x3089;&#x30E2;&#x30C7;&#x30EB;S3X&#x306E;&#x3044;&#x305A;&#x308C;&#x304B;&#x306B;&#x8CB7;&#x3044;&#x63DB;&#x3048;&#x308B;&#x5834;&#x5408;&#x3001;&#x6B21;&#x306E;&#x8ECA;&#x4E21;&#x306E;FSD&#x3092;&#x534A;&#x984D;&#x3067;&#x8CFC;&#x5165;&#x3067;&#x304D;&#x308B;&#x30D7;&#x30E9;&#x30F3;&#x3092;&#x63D0;&#x793A;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;<br>
+&#x30C6;&#x30B9;&#x30E9;&#x304C;&#x8CA9;&#x58F2;&#x3057;&#x3066;&#x3044;&#x308B;FSD&#xFF08;&#x5B8C;&#x5168;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#xFF09;&#x306F;&#x30AA;&#x30FC;&#x30CA;&#x30FC;&#x306E;&#x30A2;&#x30AB;&#x30A6;&#x30F3;&#x30C8;&#x3067;&#x306F;&#x306A;&#x304F;&#x8ECA;&#x4E21;&#x306B;&#x7D10;&#x3065;&#x3044;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x8CB7;&#x3044;&#x63DB;&#x3048;&#x308B;&#x3068;FSD&#x306E;&#x6A29;&#x5229;&#x306F;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;<br>
+&#x9AD8;&#x984D;&#x306A;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x3042;&#x308B;&#x304C;&#x6545;&#x306B;&#x8CB7;&#x3044;&#x66FF;&#x3048;&#x306E;&#x8DB3;&#x67B7;&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x306F;&#x9593;&#x9055;&#x3044;&#x306A;&#x304F;&#x3001;&#x4ECA;&#x56DE;&#x306E;&#x53D6;&#x308A;&#x7D44;&#x307F;&#x3067;&#x305D;&#x308C;&#x3092;&#x89E3;&#x6D88;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x3066;&#x3044;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x4E2D;&#x56FD;&#x3067;&#x306F;&#x4ED6;&#x306B;&#x3082;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x7279;&#x5178;&#x3092;&#x7528;&#x610F;&#x3002;</p>
+<ul>
+<li>15,000km&#x5206;&#x30B9;&#x30FC;&#x30D1;&#x30FC;&#x30C1;&#x30E3;&#x30FC;&#x30B8;&#x30E3;&#x30FC;&#x7121;&#x6599;</li>
+<li>&#x30A6;&#x30A9;&#x30FC;&#x30EB;&#x30B3;&#x30CD;&#x30AF;&#x30BF;&#x30FC;&#x7121;&#x6599;&#x30AF;&#x30FC;&#x30DD;&#x30F3;</li>
+<li>&#x5E74;&#x6B21;&#x691C;&#x67FB;&#x7121;&#x6599;</li>
+<li>2&#x5E74;&#x9593;&#x306E;&#x5EF6;&#x9577;&#x4FDD;&#x8A3C;20&#xFF05;&#x30AA;&#x30D5;</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://teskas.net/forums/topic/40996/">&#x30C6;&#x30B9;&#x30E9;&#x4E2D;&#x56FD;&#x3001;FSD&#x534A;&#x984D;&#x3067;&#x8CFC;&#x5165;&#x53EF;&#x80FD;&#x3078;&#x3002; | &#x30C6;&#x30B9;&#x30AB;&#x30B9;</a></li>
+<li><a href="https://driveteslacanada.ca/news/tesla-china-trade-in-fsd-discount/">Tesla China offering FSD at half price, other incentives in new trade-in offer - Drive Tesla Canada</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="202138">2021/3/8</h1>
+
+<h2 class="mume-header" id="%E8%87%AA%E5%8B%95%E9%81%8B%E8%BB%A2lv3%E3%81%AE%E5%8B%95%E5%90%91">&#x81EA;&#x52D5;&#x904B;&#x8EE2;Lv3&#x306E;&#x52D5;&#x5411;</h2>
+
+<p>&#x73FE;&#x5728;&#x306E;&#x5404;&#x793E;&#x306E;&#x52D5;&#x5411;&#x304C;&#x7C21;&#x5358;&#x306B;&#x307E;&#x3068;&#x307E;&#x3063;&#x3066;&#x304A;&#x308A;&#x898B;&#x3084;&#x3059;&#x3044;&#x3002;</p>
+<p><a href="https://jidounten-lab.com/y_1679">&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30EC;&#x30D9;&#x30EB;3&#x306E;&#x5B9A;&#x7FA9;&#x3084;&#x958B;&#x767A;&#x72B6;&#x6CC1;&#x307E;&#x3068;&#x3081;&#x3000;&#x30DB;&#x30F3;&#x30C0;&#x304C;2021&#x5E74;3&#x6708;&#x306B;&#x8ECA;&#x4E21;&#x767A;&#x58F2; | &#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30E9;&#x30DC;</a></p>
+<h2 class="mume-header" id="vw-id3id4-ota%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E6%9B%B4%E6%96%B0%E3%82%92%E4%BB%8A%E5%A4%8F%E3%81%8B%E3%82%89%E6%AC%A7%E5%B7%9E%E3%81%A7%E9%96%8B%E5%A7%8B">VW ID.3/ID.4 : OTA&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x66F4;&#x65B0;&#x3092;&#x4ECA;&#x590F;&#x304B;&#x3089;&#x6B27;&#x5DDE;&#x3067;&#x958B;&#x59CB;</h2>
+
+<p>VW&#x306F;ID.3/ID.4&#x306E;&#x5168;&#x8ECA;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x4ECA;&#x590F;&#x304B;&#x3089;&#x6B27;&#x5DDE;&#x3067;OTA&#x3092;&#x958B;&#x59CB;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x767A;&#x8868;&#x3002;<br>
+&#x73FE;&#x5728;VW&#x793E;&#x5185;&#x3067;OTA&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x7D04;3000&#x53F0;&#x898F;&#x6A21;&#x3067;&#x5B9F;&#x65BD;&#x4E2D;&#x3068;&#x306E;&#x3053;&#x3068;&#x3002;</p>
+<ul>
+<li>&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF1A;Wifi or &#x30E2;&#x30D0;&#x30A4;&#x30EB;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;(&#x304A;&#x305D;&#x3089;&#x304F;4G&#x56DE;&#x7DDA;)</li>
+<li>&#x66F4;&#x65B0;&#x5185;&#x5BB9;&#xFF1A;&#x6A5F;&#x80FD;&#x5411;&#x4E0A;&#x30FB;&#x6A5F;&#x80FD;&#x8FFD;&#x52A0;&#x30FB;&#x30BD;&#x30D5;&#x30C8;&#x30D1;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30F3;&#x30B9;&#x6700;&#x9069;&#x5316;&#x30FB;&#x30AB;&#x30B9;&#x30BF;&#x30DE;&#x30A4;&#x30BA;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x8A2D;&#x5B9A;</li>
+</ul>
+<p><img src="../../assets/images/vw_id3_ota.png" width="70%"><br></p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://response.jp/article/2021/03/05/343700.html">VW&#x306E;&#x65B0;&#x578B;EV&#x300C;ID.&#x300D;&#x30B7;&#x30EA;&#x30FC;&#x30BA;&#x3001;&#x521D;&#x306E;&#x7121;&#x7DDA;&#x30BD;&#x30D5;&#x30C8;&#x66F4;&#x65B0;&#x2026;&#x4ECA;&#x590F;&#x304B;&#x3089;&#x6B27;&#x5DDE;&#x3067; | &#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#xFF08;Response.jp&#xFF09;</a></li>
+<li><a href="https://carbuzz.com/news/volkswagen-id-4-already-gets-its-first-major-software-upgrade">Volkswagen ID.4 Already Gets Its First Major Software Upgrade | CarBuzz</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="ford-mustang-mach-e-%E4%B8%80%E9%83%A8%E6%89%80%E6%9C%89%E8%80%85%E9%99%90%E5%AE%9A%E3%81%A7ota%E3%83%99%E3%83%BC%E3%82%BF%E9%85%8D%E4%BF%A1%E3%81%AE%E5%AE%9F%E6%96%BD">Ford Mustang Mach-E : &#x4E00;&#x90E8;&#x6240;&#x6709;&#x8005;&#x9650;&#x5B9A;&#x3067;OTA&#x30D9;&#x30FC;&#x30BF;&#x914D;&#x4FE1;&#x306E;&#x5B9F;&#x65BD;</h2>
+
+<p>Ford&#x306F;Mustang Mach-E&#x306E;&#x6240;&#x6709;&#x8005;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;OTA&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x66F4;&#x65B0;&#x306E;&#x3B2;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x5B9F;&#x65BD;&#x3002;&#x5BFE;&#x8C61;&#x8005;&#x306F;<a href="https://www.macheforum.com/site/threads/ford-offers-early-ota-updates-for-select-survey-respondents.4088/">MachEForum</a>&#x306B;&#x53C2;&#x52A0;&#x3057;&#x3066;&#x304A;&#x308A;&#x3001;&#x79D8;&#x5BC6;&#x4FDD;&#x6301;&#x5951;&#x7D04;(NDA)&#x306B;&#x5951;&#x7D04;&#x3092;&#x540C;&#x610F;&#x3057;&#x305F;&#x4EBA;&#x306B;&#x9650;&#x3089;&#x308C;&#x308B;&#x305D;&#x3046;&#x3067;&#x3059;&#x3002;DNA&#x304C;&#x5B88;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x9650;&#x308A;OTA&#x306E;&#x8A73;&#x7D30;&#x306F;&#x672A;&#x77E5;&#x306E;&#x307E;&#x307E;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x8FD1;&#x3044;&#x3046;&#x3061;&#x306B;Ford&#x3082;OTA&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x66F4;&#x65B0;&#x3092;&#x5E02;&#x5834;&#x3067;&#x5C0E;&#x5165;&#x3057;&#x3066;&#x304F;&#x308B;&#x3068;&#x601D;&#x308F;&#x308C;&#x307E;&#x3059;&#x3002;<br>
+&#x3061;&#x306A;&#x307F;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x30C6;&#x30B9;&#x30C8;&#x306E;&#x53C2;&#x52A0;&#x8005;&#x306F;Amazon&#x30AE;&#x30D5;&#x30C8;&#x5238;$20&#x304C;&#x3082;&#x3089;&#x3048;&#x308B;&#x3088;&#x3046;&#x3067;&#x3059;&#x3002;</p>
+<p><img src="../../assets/images/ford_machE_ota.png" width="70%"><br></p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.autoverdict.com/ford/ford-beta-testing-mustang-mach-e-ota-updates/">Ford Beta Testing Mustang Mach E OTA Updates | AutoVerdict</a><br>
+&gt; - <a href="https://insideevs.com/news/492416/ford-mustang-mache-testing-ota-software-updates/">Ford Starts Beta Testing Mustang Mach-E Over-The-Air Software Updates</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="audi%E3%81%AE%E3%83%93%E3%83%83%E3%82%B0%E3%83%87%E3%83%BC%E3%82%BF%E6%B4%BB%E7%94%A8%E8%B7%AF%E9%9D%A2%E7%8A%B6%E6%85%8B%E3%81%8B%E3%82%89%E8%AD%A6%E5%91%8A%E3%82%92%E8%A1%8C%E3%81%86">Audi&#x306E;&#x30D3;&#x30C3;&#x30B0;&#x30C7;&#x30FC;&#x30BF;&#x6D3B;&#x7528;&#xFF1A;&#x8DEF;&#x9762;&#x72B6;&#x614B;&#x304B;&#x3089;&#x8B66;&#x544A;&#x3092;&#x884C;&#x3046;</h2>
+
+<p>Audi&#x306F;V2X&#x306E;&#x4ED5;&#x7D44;&#x307F;&#x3092;&#x6D3B;&#x7528;&#x3057;&#x3066;&#x3001;&#x8ECA;&#x4E21;&#x6319;&#x52D5;&#x304B;&#x3089;&#x8DEF;&#x9762;&#x6469;&#x64E6;&#x4FC2;&#x6570;&#x3092;&#x63A8;&#x5B9A;&#x3057;&#x300C;Local hazrd alerts&#x300D;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;&#x6C37;&#x306E;&#x306F;&#x3063;&#x305F;&#x6ED1;&#x308A;&#x3084;&#x3059;&#x3044;&#x8DEF;&#x9762;&#x306B;&#x5DEE;&#x3057;&#x639B;&#x304B;&#x308B;&#x524D;&#x306B;&#x3001;&#x30EA;&#x30A2;&#x30EB;&#x30BF;&#x30A4;&#x30E0;&#x3067;&#x30C9;&#x30E9;&#x30A4;&#x30D0;&#x306B;&#x6CE8;&#x610F;&#x559A;&#x8D77;&#x3092;&#x884C;&#x3046;&#x3002;<br>
+NIRA&#x306F;2018&#x5E74;&#x304B;&#x3089;&#x8ECA;&#x4E21;&#x60C5;&#x5831;&#x304B;&#x3089;&#x9053;&#x8DEF;&#x72B6;&#x614B;&#x3092;&#x4E88;&#x6E2C;&#x3059;&#x308B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x3066;&#x3044;&#x305F;&#x304C;&#x3001;Audi/HERE&#x3068;&#x9023;&#x643A;&#x3092;&#x59CB;&#x3081;&#x305F;&#x3053;&#x3068;&#x3067;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304C;&#x3088;&#x308A;&#x5C55;&#x958B;&#x3055;&#x308C;&#x305F;&#x4E8B;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<ul>
+<li>&#x7D04;170&#x4E07;&#x53F0;&#x306E;&#x53CE;&#x96C6;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6D3B;&#x7528;</li>
+<li>&#x8DEF;&#x9762;&#x306E;&#x6469;&#x64E6;&#x4FC2;&#x6570;&#x3092;&#x63A8;&#x5B9A;&#x3057;&#x8DEF;&#x9762;&#x72B6;&#x614B;&#x304B;&#x3089;&#x4E8B;&#x524D;&#x306B;&#x6CE8;&#x610F;&#x559A;&#x8D77;</li>
+<li>&#x30B9;&#x30A6;&#x30A7;&#x30FC;&#x30C7;&#x30F3;&#x306E;<a href="https://niradynamics.se/">NIRA Dynamics AB</a>&#x53CA;&#x3073;<a href="https://www.here.com/">HERE Technologies</a>(BMW, Daimler, Audi&#x304C;&#x6240;&#x6709;&#x3059;&#x308B;&#x5730;&#x56F3;&#x4F1A;&#x793E;)&#x3068;&#x306E;&#x5171;&#x540C;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3068;&#x306A;&#x308B;&#x3002;</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.volkswagenag.com/en/news/2021/03/precise-data-for-greater-safety--audi-warns-its-drivers-about-sl.html">Precise data for greater safety: Audi warns its drivers about slippery roads</a></li>
+<li><a href="https://kyodonewsprwire.jp/release/201802050662">NIRA Dynamics&#x3068;Klimator&#x304C;&#x63D0;&#x643A;&#x3092;&#x5F37;&#x5316;&#x3000;&#x81EA;&#x52D5;&#x8ECA;&#x306E;&#x6469;&#x64E6;&#x30C7;&#x30FC;&#x30BF;&#x3067;&#x9053;&#x8DEF;&#x5929;&#x5019;&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x5411;&#x4E0A; | NIRA Dynamics AB&#x306E;&#x30D7;&#x30EC;&#x30B9;&#x30EA;&#x30EA;&#x30FC;&#x30B9; | &#x5171;&#x540C;&#x901A;&#x4FE1;PR&#x30EF;&#x30A4;&#x30E4;&#x30FC;</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="2021219">2021/2/19</h1>
+
+<h2 class="mume-header" id="bosch-microsoft-%E3%81%8C%E5%85%B1%E5%90%8C%E3%81%A7ota-su%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%82%92%E9%96%8B%E7%99%BA">Bosch, Microsoft &#x304C;&#x5171;&#x540C;&#x3067;OTA-SU&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3092;&#x958B;&#x767A;</h2>
+
+<p>Azure&#x306E;&#x30AF;&#x30E9;&#x30A6;&#x30C9;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3068;Bosh&#x306E;&#x5404;&#x7A2E;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x30D9;&#x30FC;&#x30B9;&#x306B;OTA-SU&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306E;&#x304B;&#x958B;&#x767A;&#x3092;&#x958B;&#x59CB;&#x3059;&#x308B;&#x3068;&#x306E;&#x3053;&#x3068;&#x3002;2021&#x5E74;&#x672B;&#x307E;&#x3067;&#x306B;&#x30D7;&#x30ED;&#x30C8;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x4F5C;&#x6210;&#x4E88;&#x5B9A;&#x3002;<br>
+&#x307E;&#x305F;&#x3001;&#x4E21;&#x793E;&#x306F;GitHub&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x81EA;&#x52D5;&#x8ECA;&#x696D;&#x754C;&#x5171;&#x901A;&#x306E;OSS(Open Source Sofrware)&#x5316;&#x3082;&#x8A08;&#x753B;&#x3092;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<p>&#x3082;&#x3057;&#x8ECA;&#x8F09;&#x6A5F;&#x306E;OTA&#x6280;&#x8853;&#x304C;OSS&#x5316;&#x3055;&#x308C;&#x3066;&#x3070;&#x3001;&#x3088;&#x308A;&#x30ED;&#x30D0;&#x30B9;&#x30C8;&#x30CD;&#x30B9;&#x306A;&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x304C;&#x4F5C;&#x3089;&#x308C;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x3082;&#x306E;&#x306B;&#x3088;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;&#x81EA;&#x793E;&#x3067;&#x6280;&#x8853;&#x3092;&#x96A0;&#x3057;&#x6301;&#x3064;&#x3088;&#x308A;&#x3082;&#x4E16;&#x754C;&#x4E2D;&#x306E;&#x30A8;&#x30F3;&#x30B8;&#x30CB;&#x30A2;&#x306B;&#x63C9;&#x307E;&#x308C;&#x305F;OSS&#x306E;&#x65B9;&#x304C;&#x6709;&#x7528;&#x306A;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x306B;&#x6210;&#x719F;&#x3059;&#x308B;&#x3068;&#x3068;&#x8003;&#x3048;&#x65B9;&#x304C;&#x5909;&#x308F;&#x3063;&#x3066;&#x304D;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://japan.cnet.com/article/35166755/">&#x30DE;&#x30A4;&#x30AF;&#x30ED;&#x30BD;&#x30D5;&#x30C8;&#x3068;&#x30DC;&#x30C3;&#x30B7;&#x30E5;&#x3001;&#x81EA;&#x52D5;&#x8ECA;&#x5411;&#x3051;&#x30BD;&#x30D5;&#x30C8;&#x5B9A;&#x7FA9;&#x57FA;&#x76E4;&#x3092;&#x958B;&#x767A;&#x3078;--&#x30B9;&#x30DE;&#x30DB;&#x306E;&#x3088;&#x3046;&#x306B;&#x8ECA;&#x3092;&#x66F4;&#x65B0; - CNET Japan</a><br>
+<a href="https://www.cnet.com/roadshow/news/microsoft-and-bosch-join-forces-to-create-new-automotive-software-platform/">Microsoft and Bosch join forces to create new automotive software platform - Roadshow</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="mercedes130%E4%B8%87%E8%BB%8A%E4%B8%A1%E3%81%AE%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%AB%E3%82%92su%E5%AF%BE%E5%BF%9Csos%E6%A9%9F%E8%83%BD">Mercedes&#xFF1A;130&#x4E07;&#x8ECA;&#x4E21;&#x306E;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x3092;SU&#x5BFE;&#x5FDC;&#xFF08;SOS&#x6A5F;&#x80FD;&#xFF09;</h2>
+
+<p>&#x4E8B;&#x6545;&#x767A;&#x751F;&#x6642;&#x306B;&#x6551;&#x6025;&#x8981;&#x8ACB;&#x3092;&#x884C;&#x3046;&#x300C;&#x81EA;&#x52D5;eCall&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x300D;&#x306B;&#x304A;&#x3044;&#x3066;&#x3001;&#x4E8B;&#x6545;&#x767A;&#x751F;&#x6642;&#x306E;&#x5834;&#x6240;&#x3067;&#x306F;&#x306A;&#x304F;&#x6700;&#x5F8C;&#x306B;IG-ON&#x3057;&#x305F;&#x5834;&#x6240;&#x306E;&#x4F4D;&#x7F6E;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x9001;&#x4FE1;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x4E0D;&#x5177;&#x5408;&#x304C;&#x767A;&#x899A;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;SOS&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x624B;&#x52D5;&#x3067;&#x64CD;&#x4F5C;&#x3057;&#x305F;&#x5834;&#x5408;&#x306F;&#x3001;&#x6B63;&#x5E38;&#x306B;&#x4F5C;&#x52D5;&#x3059;&#x308B;&#x3068;&#x306E;&#x3053;&#x3068;&#x3002;</p>
+<ul>
+<li>&#x554F;&#x984C;
+<ul>
+<li>&#x901A;&#x4FE1;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x8A2D;&#x8A08;&#x306B;&#x554F;&#x984C;&#x3042;&#x308A;<br>
+&#xFF08;&#x885D;&#x7A81;&#x306E;&#x5F71;&#x97FF;&#x3067;&#x901A;&#x4FE1;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3078;&#x306E;&#x96FB;&#x529B;&#x4F9B;&#x7D66;&#x304C;&#x5BF8;&#x65AD;&#x3055;&#x308C;&#x308B;&#x3068;&#x3001;&#x4F4D;&#x7F6E;&#x60C5;&#x5831;&#x304C;&#x6700;&#x5F8C;&#x306E;IG-ON&#x4F4D;&#x7F6E;&#x3068;&#x3057;&#x3066;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x308B;&#x3002;&#x304A;&#x305D;&#x3089;&#x304F;&#x30D0;&#x30C3;&#x30D5;&#x30A1;&#x3068;&#x3057;&#x3066;&#x6B8B;&#x3057;&#x3066;&#x3042;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x305D;&#x306E;&#x307E;&#x307E;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x308B;&#x3002;&#xFF09;</li>
+</ul>
+</li>
+<li>&#x5BFE;&#x5FDC;&#x65B9;&#x6CD5;
+<ul>
+<li>OTA&#x30EA;&#x30D7;&#x30ED;</li>
+<li>&#x8CA9;&#x58F2;&#x5E97;&#x3067;&#x306E;&#x30EA;&#x30D7;&#x30ED;</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.thecarconnection.com/news/1131287_mercedes-benz-to-fix-nearly-1-3m-recalled-vehicles-with-software-update">Mercedes-Benz to fix nearly 1.3M recalled vehicles with software update</a></li>
+<li><a href="https://jp.reuters.com/article/mercedes-benz-recall-idJPKBN2AF09R">&#x30C0;&#x30A4;&#x30E0;&#x30E9;&#x30FC;&#x3001;&#x7C73;&#x3067;&#x30E1;&#x30EB;&#x30BB;&#x30C7;&#x30B9;&#x30FB;&#x30D9;&#x30F3;&#x30C4;129&#x4E07;&#x53F0;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x3000;&#x30BD;&#x30D5;&#x30C8;&#x306B;&#x554F;&#x984C; | Reuters</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="2021217">2021/2/17</h1>
+
+<h2 class="mume-header" id="ford-mustang-mach-e%E3%81%AEota%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0hmi">Ford Mustang MACH-E&#x306E;OTA&#x30B7;&#x30B9;&#x30C6;&#x30E0;/HMI</h2>
+
+<ul>
+<li>&#x8ECA;&#x8F09;&#x901A;&#x4FE1;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB; or Wifi</li>
+<li>&#x81EA;&#x52D5;OTA&#x66F4;&#x65B0;&#x6A5F;&#x80FD;&#x3042;&#x308A;</li>
+<li>&#x8D70;&#x884C;&#x4E2D;&#x306B;&#x3082;&#x53EF;&#x80FD;&#x306A;&#x66F4;&#x65B0;&#x3082;&#x3042;&#x308C;&#x3070;&#x505C;&#x6B62;&#x4E2D;&#x3057;&#x304B;&#x66F4;&#x65B0;&#x3067;&#x304D;&#x306A;&#x3044;&#x3082;&#x306E;&#x3082;&#x3042;&#x308B;</li>
+<li>&#x66F4;&#x65B0;&#x30BF;&#x30A4;&#x30DF;&#x30F3;&#x30B0;&#x306E;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x8A2D;&#x5B9A;&#x304C;&#x53EF;&#x80FD;</li>
+<li>&#x6B21;&#x56DE;IG-ON&#x3067;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x5B8C;&#x4E86;&#x901A;&#x77E5;</li>
+<li>&#x66F4;&#x65B0;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x3092;&#x30BF;&#x30C3;&#x30C1;&#x3059;&#x308B;&#x3068;&#x8A73;&#x7D30;&#x753B;&#x9762;&#x306B;&#x9077;&#x79FB;</li>
+</ul>
+<img src="./img/2021-02-17_ford_mustang_mach-e_ota_2.png" width="80%">
+<p>Youtube</p>
+<p><a href="https://www.youtube.com/watch?v=XlmgNed_0qo"><img src="./img/2021-02-17_ford_mustang_mach-e_ota.png" width="40%"></a></p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.slashgear.com/watch-the-ford-mustang-mach-e-battle-against-gravity-lightning-and-a-freaking-rocket-12659173/">Watch the Ford Mustang Mach-E battle against gravity, lightning, and a freaking rocket - SlashGear</a></li>
+<li><a href="https://www.youtube.com/watch?v=XlmgNed_0qo&amp;feature=emb_logo">Knowing Your Mustang Mach-E: Over-the-Air Updates | Mustang Mach-E | Ford - YouTube</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="%E5%A4%A9%E4%B8%8B%E4%B8%80%E5%93%81%E8%AA%A4%E8%AA%8D%E8%AD%98%E5%95%8F%E9%A1%8C%E3%81%A8ota%E6%8A%80%E8%A1%93%E3%81%B8%E3%81%AE%E6%9C%9F%E5%BE%85">&#x300C;&#x5929;&#x4E0B;&#x4E00;&#x54C1;&#x300D;&#x8AA4;&#x8A8D;&#x8B58;&#x554F;&#x984C;&#x3068;OTA&#x6280;&#x8853;&#x3078;&#x306E;&#x671F;&#x5F85;</h2>
+
+<p>&#x4EE5;&#x524D;&#x3001;&#x30DB;&#x30F3;&#x30C0;&#x30BB;&#x30F3;&#x30B7;&#x30F3;&#x30B0;&#x306E;&#x6A19;&#x8B58;&#x8A8D;&#x8B58;&#x3067;&#x3001;&#x300C;&#x5929;&#x4E0B;&#x4E00;&#x54C1;&#x300D;&#x770B;&#x677F;&#x3092;&#x300C;&#x9032;&#x5165;&#x7981;&#x6B62;&#x300D;&#x6A19;&#x8B58;&#x3068;&#x8AA4;&#x8A8D;&#x8B58;&#x3057;&#x3066;&#x3057;&#x307E;&#x3046;&#x554F;&#x984C;&#x304C;&#x8A71;&#x984C;&#x306B;&#x306A;&#x3063;&#x305F;&#x3002;&#x307E;&#x305F;&#x3001;2020&#x5E74;2&#x6708;&#x306E;McAfee&#x306E;ADAS&#x30CF;&#x30C3;&#x30AD;&#x30F3;&#x30B0;&#x8ABF;&#x67FB;&#x3067;&#x3001;&#x6A19;&#x8B58;&#x306B;&#x7C21;&#x5358;&#x306A;&#x30B9;&#x30C6;&#x30C3;&#x30AB;&#x30FC;&#x3092;&#x8CBC;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x300C;&#x4E00;&#x6642;&#x505C;&#x6B62;&#x300D;&#x3092;&#x300C;&#x8FFD;&#x52A0;&#x8ECA;&#x7DDA;&#x300D;&#x306E;&#x6A19;&#x8B58;&#x306B;&#x8AA4;&#x8A8D;&#x8B58;&#x3055;&#x305B;&#x305F;&#x308A;&#x3001;&#x901F;&#x5EA6;&#x5236;&#x9650;&#x306E;&#x6570;&#x5024;&#x3092;&#x8AA4;&#x8A8D;&#x8B58;&#x3055;&#x305B;&#x305F;&#x308A;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3068;&#x516C;&#x8868;&#x3057;&#x305F;&#xFF08;&#x8ABF;&#x67FB;&#x8ECA;&#x4E21;&#xFF1A;2016&#x5E74;&#x88FD; Tesla&#x8ECA;&#x4E21; Mobileye-Camera&#xFF09;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x3001;ADAS&#x306E;&#x5916;&#x7684;&#x8981;&#x56E0;&#x306B;&#x3088;&#x308B;&#x8AA4;&#x8A8D;&#x8B58;&#x3084;&#x30CF;&#x30C3;&#x30AD;&#x30F3;&#x30B0;&#x306F;&#x3001;&#x81F4;&#x547D;&#x7684;&#x306A;&#x88AB;&#x5BB3;&#x3092;&#x53CA;&#x307C;&#x3059;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308A;&#x3001;&#x8FC5;&#x901F;&#x306A;&#x5BFE;&#x5FDC;&#x304C;&#x5FC5;&#x8981;&#x306B;&#x306A;&#x308B;&#x3002;&#x305D;&#x3046;&#x3057;&#x305F;&#x5BFE;&#x5FDC;&#x306B;OTA&#x6280;&#x8853;&#x304C;&#x6D3B;&#x304D;&#x3066;&#x304F;&#x308B;&#x3068;&#x3001;&#x4E16;&#x306E;&#x4E2D;&#x3067;&#x306F;OTA&#x3078;&#x306E;&#x671F;&#x5F85;&#x304C;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</p>
+<img src="./img/2021-02-17_honda_rsa_tenichi.png" width="40%">
+<p>&#x203B;&#x51FA;&#x5178;:<a href="https://togetter.com/li/1266643">HONDA&#x306E;&#x4EBA;&#x5DE5;&#x77E5;&#x80FD;&#x306F;&#x8ECA;&#x7A2E;&#x306B;&#x3088;&#x3063;&#x3066;&#x201C;&#x5929;&#x4E0B;&#x4E00;&#x54C1;&#x30E9;&#x30FC;&#x30E1;&#x30F3;&#x201D;&#x306E;&#x30DE;&#x30FC;&#x30AF;&#x3068;&#x201C;&#x9032;&#x5165;&#x7981;&#x6B62;&#x201D;&#x306E;&#x6A19;&#x8B58;&#x3092;&#x898B;&#x5206;&#x3051;&#x3089;&#x308C;&#x306A;&#x3044;&#xFF01;&#xFF1F;&#x2192;&#x5B9F;&#x969B;&#x306B;&#x5929;&#x4E0B;&#x4E00;&#x54C1;&#x306B;&#x8FD1;&#x3065;&#x3044;&#x3066;&#x307F;&#x305F;&#x7D50;&#x679C; - Togetter</a></p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://jidounten-lab.com/u_tenka-honda-ota">&#x300C;&#x5929;&#x4E0B;&#x4E00;&#x54C1;&#x300D;&#x8AA4;&#x8A8D;&#x8B58;&#x554F;&#x984C;&#x3001;&#x300C;OTA&#x300D;&#x304C;&#x89E3;&#x6C7A;&#x306E;&#x9375;&#xFF01;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6642;&#x4EE3;&#x306E;&#x5FC5;&#x9808;&#x6280;&#x8853; | &#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30E9;&#x30DC;</a></li>
+<li><a href="https://www.honda.co.jp/hondasensing/common/pdf/hondasensing.pdf">hondasensing.pdf</a></li>
+</ul>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>9a1f47ec29ac8aa5d120e286918ec3d249a21048</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1 class="mume-header" id="202124">2021/2/4</h1>
+
+<h2 class="mume-header" id="%E9%9F%93%E5%9B%BD%E7%99%BA%E3%81%AE%E7%89%A9%E4%BD%93%E8%AA%8D%E8%AD%98%E3%82%BD%E3%83%95%E3%83%88svnet%E3%81%8C%E4%B8%96%E7%95%8C880%E4%B8%87%E8%BB%8A%E4%B8%A1%E3%81%A7%E6%8E%A1%E7%94%A8">&#x97D3;&#x56FD;&#x767A;&#x306E;&#x7269;&#x4F53;&#x8A8D;&#x8B58;&#x30BD;&#x30D5;&#x30C8;&#x300C;SVNet&#x300D;&#x304C;&#x4E16;&#x754C;880&#x4E07;&#x8ECA;&#x4E21;&#x3067;&#x63A1;&#x7528;</h2>
+
+<p><a href="https://stradvision.com/ja/products-ja/">SVNet</a>&#x3068;&#x306F;&#x3001;&#x97D3;&#x56FD;&#x306E;STRADVISION&#x793E;&#x304C;&#x958B;&#x767A;&#x3057;&#x3066;&#x3044;&#x308B;DNN&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x7269;&#x4F53;&#x8A8D;&#x8B58;&#x30BD;&#x30D5;&#x30C8;&#x3067;&#x3059;&#x3002;MobileEye&#x306B;&#x4E26;&#x3073;&#x3001;&#x6700;&#x8FD1;&#x6CE8;&#x76EE;&#x5EA6;&#x304C;&#x9AD8;&#x3044;&#x8A8D;&#x8B58;&#x30BD;&#x30D5;&#x30C8;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>STRADVISION&#x793E;&#x306F;&#x4ECA;&#x5E74;2&#x6708;2&#x65E5;&#x307E;&#x3067;&#x306B;&#x3001;&#x56FD;&#x969B;&#x7684;&#x306A;&#x60C5;&#x5831;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;&#x8A8D;&#x8A3C;&#x300C;ISO 27001:2013&#xFF08;ISMS&#xFF09;&#x300D;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x305F;&#x3053;&#x3068;&#x3092;&#x767A;&#x8868;&#x3057;&#x3001;SVNet&#x306E;&#x4FE1;&#x983C;&#x6027;&#x3082;&#x5411;&#x4E0A;&#x3057;&#x305F;&#x3068;&#x8A00;&#x3048;&#x307E;&#x3059;&#x3002;</p>
+<p><u>&#x7279;&#x5FB4;</u></p>
+<ul>
+<li>&#x8EFD;&#x91CF;&#x306A;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#xFF08;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x6570;2M&#x4EE5;&#x4E0B;&#xFF09;</li>
+<li>&#x7D44;&#x307F;&#x8FBC;&#x307F;&#x5411;&#x3051;</li>
+<li>&#x7CBE;&#x5EA6;&#xFF1A;Faster-RCNN(VGG)*1&#x3068;&#x540C;&#x7B49;&#x30EC;&#x30D9;&#x30EB; (<a href="https://stradvision.com/ja/svnet-external-ja/">&gt;&gt;&#x8A8D;&#x8B58;&#x30B5;&#x30F3;&#x30D7;&#x30EB;&#x52D5;&#x753B;</a>)<br>
+&#x2192;COCO Dataset&#x306E;mAP(&#x8A8D;&#x8B58;&#x7CBE;&#x5EA6;&#x6307;&#x6A19;)&#x304C;26%&#x306A;&#x306E;&#x3067;&#x975E;&#x5E38;&#x306B;&#x3088;&#x3044;&#x8A8D;&#x8B58;&#x6027;&#x80FD;&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x3055;&#x305D;&#x3046;&#x3002;</li>
+</ul>
+<blockquote>
+<p>&#x8EFD;&#x304F;&#x3066;&#x3042;&#x308B;&#x7A0B;&#x5EA6;&#x306E;&#x8A8D;&#x8B58;&#x7CBE;&#x5EA6;&#x306F;&#x51FA;&#x305B;&#x308B;&#x3053;&#x3068;&#x304C;&#x58F2;&#x308A;&#x306E;&#x6A21;&#x69D8;</p>
+</blockquote>
+<p>*1 ... Microsoft&#x304C;2015&#x5E74;&#x306B;&#x767A;&#x660E;&#x3057;&#x305F;E2E&#x306E;DNN&#x7269;&#x4F53;&#x8A8D;&#x8B58;&#x30A2;&#x30EB;&#x30B4;&#x30EA;&#x30BA;&#x30E0;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://stradvision.com/ja/products-ja/">Products JA - StradVision</a></li>
+<li><a href="https://jidounten-lab.com/u_stradvision-880">&#x4E16;&#x754C;880&#x4E07;&#x53F0;&#x3067;&#x5C0E;&#x5165;&#x3078;&#xFF01;&#x97D3;&#x56FD;StradVision&#x306E;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x5411;&#x3051;&#x7269;&#x4F53;&#x8A8D;&#x8B58;&#x30BD;&#x30D5;&#x30C8; | &#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30E9;&#x30DC;</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="2021131">2021/1/31</h1>
+
+<h2 class="mume-header" id="tesla-model-sx-%E3%81%AE%E5%86%85%E8%A3%85%E3%82%92%E4%B8%80%E6%96%B0214-lo%E4%BA%88%E5%AE%9A">Tesla Model-S/X &#x306E;&#x5185;&#x88C5;&#x3092;&#x4E00;&#x65B0;&#xFF08;&apos;21/4 LO&#x4E88;&#x5B9A;&#xFF09;</h2>
+
+<ul>
+<li>Model-S
+<ul>
+<li>&#x65B0;&#x305F;&#x306B;Plaid&#x30B0;&#x30EC;&#x30FC;&#x30C9;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x305F;</li>
+<li>&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x304C;U&#x5B57;&#x578B;&#x306B;&#x5909;&#x66F4;</li>
+<li>&#x30E2;&#x30FC;&#x30BF;&#x30FC;3&#x3064;&#x642D;&#x8F09;&#xFF08;AWS&#x3001;1020&#x99AC;&#x529B;&#xFF09;</li>
+<li>0~60mph(&#x7D04;95km/h)&#x3092;2.0s&#x4EE5;&#x4E0B;&#x3067;&#x52A0;&#x901F;</li>
+<li>PS5&#x4E26;&#x306E;&#x6027;&#x80FD;&#x3092;&#x6301;&#x3064;&#x30B2;&#x30FC;&#x30E0;&#x74B0;&#x5883;&#xFF08;Witcher3&#x306A;&#x3069;&#x306E;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x304C;&#x5229;&#x7528;&#x53EF;&#x80FD;&#xFF09;</li>
+<li>&#x30D5;&#x30EB;&#x5145;&#x96FB;&#x3067;&#x7D04;836km&#x306E;&#x8D70;&#x884C;&#x304C;&#x53EF;&#x80FD;&#xFF08;Plaid+&#x30B0;&#x30EC;&#x30FC;&#x30C9;&#xFF09;</li>
+<li>&#x6700;&#x9AD8;&#x901F;&#x5EA6;&#xFF1A;200mph(&#x7D04;322km/h)</li>
+</ul>
+</li>
+</ul>
+<p>&#x203B;2021/1/31 &#x6642;&#x70B9;&#x306E;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6A5F;&#x80FD; (o: &#x5229;&#x7528;&#x53EF;&#x80FD;&#x6A5F;&#x80FD;)</p>
+<table>
+<thead>
+<tr>
+<th>&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6A5F;&#x80FD;</th>
+<th>NA</th>
+<th>JP</th>
+<th>CN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto pilot (&#x6A19;&#x6E96;&#x88C5;&#x5099;)</td>
+<td>o</td>
+<td>o</td>
+<td>o</td>
+</tr>
+<tr>
+<td>Autopark</td>
+<td>o</td>
+<td>o</td>
+<td>o</td>
+</tr>
+<tr>
+<td>Navigate on Autopilot</td>
+<td>o</td>
+<td>Upcomming</td>
+<td>o</td>
+</tr>
+<tr>
+<td>Auto Lane Change</td>
+<td>o</td>
+<td>Upcomming</td>
+<td>o</td>
+</tr>
+<tr>
+<td>Summon</td>
+<td>o</td>
+<td>Upcomming</td>
+<td>o</td>
+</tr>
+<tr>
+<td>Traffic Light and Stop Sign Control</td>
+<td>o</td>
+<td>Upcomming</td>
+<td>Upcomming</td>
+</tr>
+<tr>
+<td>Autosteer on city streets</td>
+<td>Upcomming</td>
+<td>Upcomming</td>
+<td>Upcomming</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://japanese.engadget.com/tesla-new-model-s-x-steering-yoke-high-performance-gaming-090029491.html">&#x30C6;&#x30B9;&#x30E9;&#x3001;&#x65B0;&#x578B;Model S / X&#x3092;&#x516C;&#x958B;&#x3002;U&#x5B57;&#x578B;&#x30CF;&#x30F3;&#x30C9;&#x30EB;&#x63A1;&#x7528;&#x3001;PS5&#x7D1A;&#x306E;&#x30B2;&#x30FC;&#x30E0;&#x6027;&#x80FD;&#x3082;&#xFF1F; - Engadget &#x65E5;&#x672C;&#x7248;</a></li>
+<li><a href="https://www.tesla.com/?redirect=no">Electric Cars, Solar &amp; Clean Energy | Tesla</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="2021127">2021/1/27</h1>
+
+<h2 class="mume-header" id="tesla-fsd%E3%82%92%E3%82%B5%E3%83%96%E3%82%B9%E3%82%AF%E5%8C%96%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E7%99%BA%E8%A1%A8">Tesla FSD&#x3092;&#x30B5;&#x30D6;&#x30B9;&#x30AF;&#x5316;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x767A;&#x8868;</h2>
+
+<p>Elon Musk&#x306F;&#x3001;2020&#x5E74;&#x7B2C;1&#x56DB;&#x534A;&#x671F;&#x306E;&#x6C7A;&#x7B97;&#x8AAC;&#x660E;&#x4F1A;&#xFF08;2020/4/30&#xFF09;&#x3067;FSD&#x3092;&#x30B5;&#x30D6;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x5316;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x767A;&#x8A00;&#x3057;&#x3001;Twitter&#xFF08;2020/12/20&#xFF09;&#x306B;&#x3066;2021&#x5E74;&#x306B;&#x30B5;&#x30D6;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x5316;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x767A;&#x8A00;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x8A73;&#x7D30;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x4F59;&#x308A;&#x89E6;&#x308C;&#x3089;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x96FB;&#x8A71;&#x4F1A;&#x8B70;&#x306E;&#x4E2D;&#x3067;CFO&#x306E;Kirkhorn&#x6C0F;&#x304C;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x767A;&#x8A00;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304B;&#x3089;&#x3001;&quot;Electrek&quot;&#x306F;&#x3001;&#x73FE;&#x72B6;&#x306E;FSD&#x4FA1;&#x683C;&#x8A2D;&#x5B9A;&#x3067;&#x8003;&#x3048;&#x308B;&#x3068;100/&#x6708;&#xFF08;&#xA5;10,000/&#x6708;&#xFF09;&#x4EE5;&#x4E0B;&#x306E;&#x8CA9;&#x58F2;&#x3068;&#x306A;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308B;&#x3068;&#x793A;&#x5506;&#x3057;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<blockquote>
+<p>&#x201C;Agree. And financially, rolling the upfront purchase of the FSD option into a loan in the vehicle or a lease will be the least expensive plan on a monthly basis to own, plus you preserve the option value of increased value over time.&#x201D;</p>
+</blockquote>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://electrek.co/2020/04/30/tesla-self-driving-subscription-service-price/">Tesla confirms self-driving as a subscription service but brace yourself for the price - Electrek</a></li>
+<li><a href="https://japanese.engadget.com/tesla-fsd-040002017.html">&#x30C6;&#x30B9;&#x30E9;&#x306E;&#x300E;&#x5B8C;&#x5168;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x300F;&#x6708;&#x984D;&#x6255;&#x3044;&#x3067;&#x5229;&#x7528;&#x53EF;&#x80FD;&#x306B; - Engadget &#x65E5;&#x672C;&#x7248;</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="%E3%81%9D%E3%81%AE%E4%BB%96">&#x305D;&#x306E;&#x4ED6;</h2>
+
+<ul>
+<li>2021.1.24: <a href="https://newswitch.jp/p/25619">&#x3044;&#x3059;&#x309E;&#x304C;&#x300C;&#xFF23;&#xFF21;&#xFF33;&#xFF25;&#x300D;&#x306B;1000&#x5104;&#x5186;&#xFF01;&#x30DC;&#x30EB;&#x30DC;&#x3068;&#x9023;&#x643A;&#x3067;&#x6295;&#x8CC7;&#x52B9;&#x7387;&#x9AD8;&#x3081;&#x308B;&#xFF5C;&#x30CB;&#x30E5;&#x30FC;&#x30B9;&#x30A4;&#x30C3;&#x30C1; by &#x65E5;&#x520A;&#x5DE5;&#x696D;&#x65B0;&#x805E;&#x793E;</a></li>
+<li>2020.7.30: <a href="https://bestcarweb.jp/news/177951">&#x6050;&#x308B;&#x3079;&#x304D;&#x4FA1;&#x683C;&#x7834;&#x58CA;&#x529B;&#x3067;&#x6CE8;&#x76EE;&#xFF01; &#x6FC0;&#x5B89;&#x30A2;&#x30B8;&#x30A2;&#x30BF;&#x30A4;&#x30E4;&#x3092;&#x8CB7;&#x3063;&#x3066;&#x306F;&#x30C0;&#x30E1;&#x306A;&#x306E;&#x304B;</a></li>
+</ul>
+<h1 class="mume-header" id="2021126">2021/1/26</h1>
+
+<h2 class="mume-header" id="excelfore%E3%81%AEota%E3%81%AE%E6%8A%80%E8%A1%93">Excelfore&#x306E;OTA&#x306E;&#x6280;&#x8853;</h2>
+
+<p>SUZUKI&#x3001;FORD&#x3001;ZF&#x3001;BMW&#x3001;NISSAN&#x3001;Panasonic&#x3068;&#x95A2;&#x9023;&#x304C;&#x3042;&#x308B;&#x304C;&#x8A73;&#x7D30;&#x306F;&#x3057;&#x3089;&#x3079;&#x304D;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;</p>
+<p><a href="https://www.asahi.com/and_M/pressrelease/pre_22358080/">Excelfore&#x304C;OTA&#x306E;Excelfore Docker &#x30BD;&#x30EB;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x65E5;&#x672C;&#x3067;&#x8CA9;&#x58F2;&#x958B;&#x59CB; | &#x671D;&#x65E5;&#x65B0;&#x805E;&#x30C7;&#x30B8;&#x30BF;&#x30EB;&#xFF06;M&#xFF08;&#x30A2;&#x30F3;&#x30C9;&#x30FB;&#x30A8;&#x30E0;&#xFF09;</a><br>
+<a href="https://excelfore.com/">Excelfore :: Smart Mobility Networks</a></p>
+<h2 class="mume-header" id="hondagm%E3%81%A8%E5%9B%BD%E5%86%85%E3%81%A7%E8%87%AA%E5%8B%95%E9%81%8B%E8%BB%A2%E3%83%A2%E3%83%93%E3%83%AA%E3%83%86%E3%82%A3%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%AE%9F%E8%A8%BC%E5%AE%9F%E9%A8%93%E9%96%8B%E5%A7%8B">Honda&#xFF1A;GM&#x3068;&#x56FD;&#x5185;&#x3067;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30E2;&#x30D3;&#x30EA;&#x30C6;&#x30A3;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x5B9F;&#x8A3C;&#x5B9F;&#x9A13;&#x958B;&#x59CB;</h2>
+
+<p>2021&#x5E74;&#x5185;&#x306B;GM&#x306E;Bolt&#x3092;&#x30D9;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x305F;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x8ECA;&#x4E21;&#x3092;&#x5229;&#x7528;&#x3057;&#x3001;&#x56FD;&#x5185;&#x3067;&#x306E;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6280;&#x8853;&#x306E;&#x5B9F;&#x8A3C;&#x5B9F;&#x9A13;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x3092;&#x767A;&#x8868;&#x3002;&#x5C06;&#x6765;&#x7684;&#x306B;&#x306F;&#x3001;&#x30AF;&#x30EB;&#x30FC;&#x30BA;&#x3001;GM&#x3001;Honda&#x306E;3&#x793E;&#x304C;&#x5171;&#x540C;&#x958B;&#x767A;&#x3057;&#x3066;&#x3044;&#x308B;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30E2;&#x30D3;&#x30EA;&#x30C6;&#x30A3;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x4E8B;&#x696D;&#x5C02;&#x7528;&#x8ECA;&#x4E21;&#x3067;&#x3042;&#x308B;&#x300C;&#x30AF;&#x30EB;&#x30FC;&#x30BA;&#x30FB;&#x30AA;&#x30EA;&#x30B8;&#x30F3;&#x300D;&#x3092;&#x6D3B;&#x7528;&#x3057;&#x305F;&#x4E8B;&#x696D;&#x5C55;&#x958B;&#xFF08;&#x7121;&#x4EBA;&#x30E9;&#x30A4;&#x30C9;&#x30B7;&#x30A7;&#x30A2;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#xFF09;&#x3092;&#x76EE;&#x6307;&#x3059;&#x3068;&#x306E;&#x3053;&#x3068;&#x3002;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://www.honda.co.jp/news/2021/c210120.html">Honda | Honda&#x304C;&#x30AF;&#x30EB;&#x30FC;&#x30BA;&#x30FB;GM&#x3068;&#x3001;&#x65E5;&#x672C;&#x3067;&#x306E;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x30E2;&#x30D3;&#x30EA;&#x30C6;&#x30A3;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x4E8B;&#x696D;&#x306B;&#x5411;&#x3051;&#x305F;&#x5354;&#x696D;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x3067;&#x57FA;&#x672C;&#x5408;&#x610F;</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQODZ2011T0Q1A120C2000000">&#x30DB;&#x30F3;&#x30C0;&#x3001;GM&#x3068;&#x5E74;&#x5185;&#x306B;&#x65E5;&#x672C;&#x3067;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x306E;&#x5B9F;&#x8A3C;&#x5B9F;&#x9A13;: &#x65E5;&#x672C;&#x7D4C;&#x6E08;&#x65B0;&#x805E;</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="2021119">2021/1/19</h1>
+
+<h2 class="mume-header" id="mercedes-mm%E7%B3%BB%E8%AA%B2%E9%87%91%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">Mercedes MM&#x7CFB;&#x8AB2;&#x91D1;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</h2>
+
+<p><a href="https://shop.mercedes-benz.com/ja-jp/connect/">Mercedes me Store</a>&#x3067;&#x6A5F;&#x80FD;&#x6BCE;&#x306B;&#x500B;&#x5225;&#x8CFC;&#x5165;&#x304C;&#x53EF;&#x80FD;&#x3002;<br>
+&#x305F;&#x3060;&#x3057;&#x3001;&#x8ECA;&#x4E21;&#x306B;&#x3088;&#x3063;&#x3066;&#x7121;&#x6599;&#x671F;&#x9593;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;(<a href="http://www.mercedes-me-connect.jp/shashu.html">&#x3053;&#x3061;&#x3089;&#x53C2;&#x7167;</a>)&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x30B5;&#x30FC;&#x30D3;&#x30B9;</th>
+<th>&#x671F;&#x9593;</th>
+<th>&#x4FA1;&#x683C;(&#x5186;)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30D1;&#x30FC;&#x30AD;&#x30F3;&#x30B0;&#x30A2;&#x30B7;&#x30B9;&#x30C8;</td>
+<td>1&#x5E74;</td>
+<td>7,500</td>
+</tr>
+<tr>
+<td>&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30B5;&#x30FC;&#x30D3;&#x30B9;/&#x8ECA;&#x4E21;&#x8A2D;&#x5B9A;</td>
+<td>1&#x5E74;</td>
+<td>5,300</td>
+</tr>
+<tr>
+<td>&#x8ECA;&#x4E21;&#x30E2;&#x30CB;&#x30BF;&#x30EA;&#x30F3;&#x30B0;</td>
+<td>1&#x5E74;</td>
+<td>5,300</td>
+</tr>
+<tr>
+<td>24&#x6642;&#x9593;&#x30B3;&#x30F3;&#x30B7;&#x30A7;&#x30EB;&#x30B8;&#x30E5;&#x30B5;&#x30FC;&#x30D3;&#x30B9;</td>
+<td>1&#x5E74;</td>
+<td>20,200</td>
+</tr>
+<tr>
+<td>&#x30CA;&#x30D3;&#x30B2;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30FB;&#x30B5;&#x30FC;&#x30D3;&#x30B9; (MBUX&#x8ECA;&#x4E21;)</td>
+<td>1&#x5E74;</td>
+<td>7,800</td>
+</tr>
+<tr>
+<td>&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30A8;&#x30F3;&#x30B8;&#x30F3;&#x30B9;&#x30BF;&#x30FC;&#x30C8;</td>
+<td>1&#x5E74;</td>
+<td>7,800</td>
+</tr>
+<tr>
+<td>&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;(PHV)</td>
+<td>1&#x5E74;</td>
+<td>3,400</td>
+</tr>
+<tr>
+<td>Apple CarPlayTM / Android AutoTM</td>
+<td>-</td>
+<td>30,000</td>
+</tr>
+<tr>
+<td>&#x30CA;&#x30D3;&#x30B2;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x6A5F;&#x80FD;</td>
+<td>-</td>
+<td>66,000</td>
+</tr>
+<tr>
+<td>&#x30C6;&#x30EC;&#x30D3;&#x6A5F;&#x80FD;</td>
+<td>-</td>
+<td>119,000</td>
+</tr>
+</tbody>
+</table>
+<p>&#x88DC;&#x8DB3;</p>
+<ul>
+<li><a href="http://www.mercedes-me-connect.jp/store.html">&#x2605;&#x8CFC;&#x5165;/&#x30A2;&#x30AF;&#x30C6;&#x30A3;&#x30D9;&#x30FC;&#x30C8;&#x65B9;&#x6CD5;</a></li>
+<li>&#x6C7A;&#x6E08;&#x306F;&#x30AF;&#x30EC;&#x30AB;&#x306E;&#x307F;</li>
+<li>&#x6C7A;&#x6E08;&#x5B8C;&#x4E86;&#x5F8C;&#x306E;&#x89E3;&#x7D04;&#x30FB;&#x53D6;&#x308A;&#x6D88;&#x3057;&#x4E0D;&#x53EF;</li>
+<li>&#x30AF;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x30AA;&#x30D5;&#x306F;&#x9069;&#x7528;&#x5916;</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://shop.mercedes-benz.com/ja-jp/connect/">&#x30DB;&#x30FC;&#x30E0;&#x30DA;&#x30FC;&#x30B8; | Mercedes me connect - Japan</a></li>
+<li><a href="https://www.mercedes-benz.co.jp/passengercars/being-an-owner/mercedes-me-connect/mercedes-me-connect-use-period.module.html">Mercedes me connect</a></li>
+</ul>
+</blockquote>
+<h2 class="mume-header" id="tesla-muc%E6%AC%A0%E9%99%A5%E3%81%A7158%E4%B8%87%E5%8F%B0%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%AB%E8%A6%81%E8%AB%8B">Tesla MUC&#x6B20;&#x9665;&#x3067;15.8&#x4E07;&#x53F0;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x8981;&#x8ACB;</h2>
+
+<p>NHTSA&#x306F;Tesla&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;&#x30BF;&#x30C3;&#x30C1;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x64CD;&#x4F5C;&#x306B;&#x4E0D;&#x5177;&#x5408;&#x3092;&#x304D;&#x305F;&#x3059;MCU&#x6B20;&#x9665;&#x3092;&#x7406;&#x7531;&#x306B;15.8&#x4E07;&#x53F0;&#x306E;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x3092;&#x8981;&#x8ACB;&#xFF08;&apos;21/1/13&#xFF09;&#x3002;</p>
+<p><strong>MUC&#x6B20;&#x9665;&#x5185;&#x5BB9;</strong></p>
+<ul>
+<li>&#x7B87;&#x6240;&#xFF1A;8GB&#x306E;eMMC NAND&#x30D5;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x30E1;&#x30E2;&#x30EA;&#x30FC;</li>
+<li>&#x5F71;&#x97FF;&#xFF1A;&#x5404;&#x7A2E;&#x6A5F;&#x80FD;&#x306E;&#x8A2D;&#x5B9A;&#x4E0D;&#x53EF;&#x3001;&#x30A2;&#x30E9;&#x30FC;&#x30E0;&#x306E;&#x505C;&#x6B62;&#x306A;&#x3069;</li>
+<li>&#x5185;&#x5BB9;&#xFF1A;P/E&#x30B5;&#x30A4;&#x30AF;&#x30EB;<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow></mrow><mrow><mo>&#x2217;</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">^{*1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2217;</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>&#x7D04;3000&#x56DE;&#x3067;&#x5BFF;&#x547D;&#x3068;&#x306A;&#x308A;&#x3001;&#x30E1;&#x30E2;&#x30EA;&#x4E0D;&#x8DB3;&#x306B;&#x9665;&#x3063;&#x305F;&#xFF08;NHTSA&#x5224;&#x65AD;&#xFF09;</li>
+</ul>
+<p>&#x3053;&#x306E;MUC&#x554F;&#x984C;&#x306F;&#x6628;&#x5E74;&#x304B;&#x3089;&#x6307;&#x6458;&#x3055;&#x308C;&#x3066;&#x304A;&#x308A;&#x3001;Tesla&#x306F;OTA&#x3067;&#x306E;&#x5BFE;&#x5FDC;&#x3092;&#x8A66;&#x307F;&#x305F;&#x304C;&#x3001;NHTSA&#x306F;&#x4E0D;&#x5341;&#x5206;&#x3068;&#x5224;&#x65AD;&#x3057;&#x3066;&#x3001;&#x4ECA;&#x56DE;&#x306E;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x8981;&#x8ACB;&#x306B;&#x3044;&#x305F;&#x308B;&#x3002;</p>
+<p>*1: &#x66F8;&#x304D;&#x8FBC;&#x307F;&#x6D88;&#x53BB;&#x56DE;&#x6570;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ul>
+<li><a href="https://jp.techcrunch.com/2021/01/14/2021-01-13-feds-asks-tesla-to-recall-158000-vehicles-over-failing-touchscreen-displays/?guccounter=1&amp;guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&amp;guce_referrer_sig=AQAAADney0bhGTGcIKJZORCw2tvgoHJeUXOb2U7zUw99ewlWpSlGQWayxO-Rld6ERKrwMON2R7qnxxel-tOtTzHjo0zbKQDkzxPrw_Pw986a-3euxtBUH04Q23XjRXnlrGtKk2z6tA_zZ0rTXGn5P2lI30jkZjvf71oFVBttZGVl84Rp">&#x30C6;&#x30B9;&#x30E9;&#x8ECA;15.8&#x4E07;&#x53F0;&#x306B;&#x7C73;&#x653F;&#x5E9C;&#x304C;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x8981;&#x8ACB;&#x3001;&#x30BF;&#x30C3;&#x30C1;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x306B;&#x4E0D;&#x5177;&#x5408; | TechCrunch Japan</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOGN14F7T0U1A110C2000000">&#x7C73;&#x5F53;&#x5C40;&#x3001;&#x30C6;&#x30B9;&#x30E9;&#x306B;&#x30EA;&#x30B3;&#x30FC;&#x30EB;&#x8981;&#x8ACB;&#x3000;&#x904B;&#x8EE2;&#x652F;&#x63F4;&#x6A5F;&#x80FD;&#x306B;&#x4E0D;&#x5177;&#x5408;: &#x65E5;&#x672C;&#x7D4C;&#x6E08;&#x65B0;&#x805E;</a></li>
+</ul>
+</blockquote>
+<h1 class="mume-header" id="2021118">2021/1/18</h1>
+
+<h2 class="mume-header" id="nio-et7%E3%82%92%E7%99%BA%E8%A1%A8">NIO et7&#x3092;&#x767A;&#x8868;</h2>
+
+<p>&#x30D0;&#x30C3;&#x30C6;&#x30EA;&#x30FC;&#x30D1;&#x30C3;&#x30AF;&#x3054;&#x3068;&#x4EA4;&#x63DB;&#x3059;&#x308B;&#x300E;&#x30D1;&#x30EF;&#x30FC;&#x30B9;&#x30EF;&#x30C3;&#x30D7;&#x30B9;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x300F;&#x306E;&#x8A2D;&#x7F6E;&#x3092;&#x3001;&#x73FE;&#x5728;177&#x30AB;&#x6240;&#x2192;2021&#x5E74;&#x672B;&#x307E;&#x3067;&#x306B;500&#x30AB;&#x6240;&#x306B;&#x3059;&#x308B;&#x3068;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3055;&#x3089;&#x306B;&#x300C;&#x8ECA;&#x4E21;&#x304C;&#x81EA;&#x52D5;&#x3067;&#x30B9;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x5165;&#x308A;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306F;&#x4E2D;&#x592E;&#x306E;&#x30C7;&#x30A3;&#x30B9;&#x30D7;&#x30EC;&#x30A4;&#x3092;1&#x56DE;&#x30BF;&#x30C3;&#x30D7;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x3001;&#x8ECA;&#x4E21;&#x304B;&#x3089;&#x964D;&#x308A;&#x308B;&#x3053;&#x3068;&#x306A;&#x304F;&#x30BB;&#x30EB;&#x30D5;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x30B9;&#x30EF;&#x30C3;&#x30D7;&#x3092;&#x958B;&#x59CB;&#x3067;&#x304D;&#x308B;&#x300D;&#x3068;&#x3044;&#x3046;&#x300E;PowerSwap Station 2.0&#x300F;&#x3092;&#x5C55;&#x958B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x8868;&#x660E;&#x3002;</p>
+<p><strong>&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6A5F;&#x80FD;&#x306E;&#x6027;&#x80FD;&#x6BD4;&#x8F03;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Items</th>
+<th>NIO</th>
+<th>Tesla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5BFE;&#x8C61;&#x8ECA;&#x4E21;</td>
+<td>ET7</td>
+<td>Model-S</td>
+</tr>
+<tr>
+<td>&#x8CA9;&#x58F2;&#x5E74;</td>
+<td>2022&#x4E88;&#x5B9A;</td>
+<td>2021&#x73FE;&#x5728;</td>
+</tr>
+<tr>
+<td>&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6A5F;&#x80FD;&#x4FA1;&#x683C;</td>
+<td>&#x7D04;11,000&#x5186;/&#x6708;(&#x30B5;&#x30D6;&#x30B9;&#x30AF;&#x58F2;&#x308A;)</td>
+<td>871,000&#x5186;(&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;)</td>
+</tr>
+<tr>
+<td>&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x7528;SoC</td>
+<td>Nvidia Drive Orion</td>
+<td>Tesla SFD Soc</td>
+</tr>
+<tr>
+<td>&#x51E6;&#x7406;&#x80FD;&#x529B;</td>
+<td>1016TOPS</td>
+<td>144TOPS</td>
+</tr>
+<tr>
+<td>Fr&#x30AB;&#x30E1;&#x30E9;&#x89E3;&#x50CF;&#x5EA6;</td>
+<td>8Mp</td>
+<td>1.2Mp</td>
+</tr>
+<tr>
+<td>&#x8ECA;&#x4E21;&#x8A8D;&#x8B58;&#x8DDD;&#x96E2;</td>
+<td>&#x7D04;687m</td>
+<td>&#x7D04;250m</td>
+</tr>
+</tbody>
+</table>
+<p>&#x203B;&#x7D04;80&#x30F6;&#x6708;&#x5229;&#x7528;&#x3059;&#x308B;&#x3068;Tesla&#x306E;FSD&#x306E;&#x4FA1;&#x683C;&#x3092;&#x4E0A;&#x56DE;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;&#x7D0D;&#x8ECA;&#x5F8C;&#x306E;&#x4E00;&#x5B9A;&#x671F;&#x9593;&#x306F;&#x7121;&#x6599;&#x671F;&#x9593;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x308B;&#x306E;&#x3067;&#x306F;&#x306A;&#x3044;&#x304B;&#x3068;&#x4E88;&#x60F3;&#x3002;</p>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ol>
+<li><a href="https://response.jp/article/2021/01/13/342070.html">&#x4E2D;&#x56FD;&#x7248;&#x30C6;&#x30B9;&#x30E9;&#x300C;&#x30CB;&#x30FC;&#x30AA;&#x300D;&#x3001;&#x9AD8;&#x6027;&#x80FD;EV&#x30BB;&#x30C0;&#x30F3;&#x767A;&#x8868;&#x2026;&#x822A;&#x7D9A;&#x306F;1000km&#x4EE5;&#x4E0A; | &#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;</a></li>
+<li><a href="https://www.nio.com/nad">NIO - NAD</a></li>
+<li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/00001/04390/">&#x300C;&#x9A5A;&#x304F;&#x307B;&#x3069;&#x5358;&#x7D14;&#x300D;&#x3001;&#x534A;&#x5C0E;&#x4F53;&#x30E1;&#x30FC;&#x30AB;&#x30FC;&#x306E;&#x5E38;&#x8B58;&#x8D85;&#x3048;&#x308B;Tesla&#x88FD;AI&#x30B3;&#x30A2; | &#x65E5;&#x7D4C;&#x30AF;&#x30ED;&#x30B9;&#x30C6;&#x30C3;&#x30AF;&#xFF08;xTECH&#xFF09;</a></li>
+<li><a href="https://www.systemplus.fr/reverse-costing-reports/triple-forward-camera-from-tesla-model-3/">Triple Forward Camera from Tesla Model 3 - System Plus Consulting</a></li>
+</ol>
+</blockquote>
+<h2 class="mume-header" id="%E6%97%A5%E7%94%A3-%E3%82%A2%E3%83%AA%E3%82%A2%E3%81%ABota%E3%82%92%E5%B0%8E%E5%85%A5">&#x65E5;&#x7523; &#x30A2;&#x30EA;&#x30A2;&#x306B;OTA&#x3092;&#x5C0E;&#x5165;</h2>
+
+<p>&#x30E1;&#x30E2;&#x30EA;2&#x9762;&#x6301;&#x3061;&#x306E;&#x300C;&#x30C7;&#x30E5;&#x30A2;&#x30EB;&#x30D0;&#x30F3;&#x30AF;&#x30E1;&#x30E2;&#x30EA;&#x300D;&#x3092;&#x63A1;&#x7528;&#x3057;&#x3001;&#x8D70;&#x884C;&#x4E2D;&#x306E;SU&#x53EF;&#x80FD;&#x3002;<br>
+&#x81EA;&#x52D5;&#x904B;&#x8EE2;Lv3&#x306E;&#x63D0;&#x4F9B;&#x306F;&#x884C;&#x308F;&#x306A;&#x3044;&#x65B9;&#x91DD;&#x3002;</p>
+<p><strong>OTA&#x3067;&#x5909;&#x66F4;&#x53EF;&#x80FD;&#x306A;&#x5185;&#x5BB9;&#x4F8B;&#xFF1A;</strong></p>
+<ul>
+<li>&#x30C9;&#x30E9;&#x30A4;&#x30D6;&#x30E2;&#x30FC;&#x30C9;&#x306E;&#x8FFD;&#x52A0;(&#x4E57;&#x308A;&#x5473;&#x306E;&#x5909;&#x66F4;)</li>
+<li>&#x30CA;&#x30D3;&#x30B2;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x66F4;&#x65B0;</li>
+<li>&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x30A4;&#x30F3;&#x30BF;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306E;&#x30A2;&#x30C3;&#x30D7;&#x30B0;&#x30EC;&#x30FC;&#x30C9;</li>
+<li>&#x5730;&#x57DF;&#x3054;&#x3068;&#x306E;&#x30CB;&#x30FC;&#x30BA;&#x3092;&#x8E0F;&#x307E;&#x3048;&#x305F;&#x30B3;&#x30CD;&#x30AF;&#x30C6;&#x30C3;&#x30C9;&#x6A5F;&#x80FD;&#x3000;&#x306A;&#x3069;</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ol>
+<li><a href="https://response.jp/article/2020/07/16/336634.html">&#x3010;&#x65E5;&#x7523; &#x30A2;&#x30EA;&#x30A2;&#x3011;&#x30B3;&#x30CD;&#x30AF;&#x30C6;&#x30C3;&#x30C9;&#x306B;&#x306F;&#x30A2;&#x30DE;&#x30BE;&#x30F3;&#x306E;Alexa&#x3082;&#x642D;&#x8F09;&#x3001;&#x30B7;&#x30FC;&#x30E0;&#x30EC;&#x30B9;&#x306A;&#x3064;&#x306A;&#x304C;&#x308A;&#x8FFD;&#x6C42; | &#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#xFF08;Response.jp&#xFF09;</a></li>
+<li><a href="https://monoist.atmarkit.co.jp/mn/articles/2101/13/news056_2.html">&#x81EA;&#x52D5;&#x8ECA;&#x306B;&#x300C;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x30D5;&#x30A1;&#x30FC;&#x30B9;&#x30C8;&#x300D;&#x304C;&#x3082;&#x305F;&#x3089;&#x3059;&#x7AF6;&#x4E89;&#x529B;&#x3092;&#x8003;&#x3048;&#x308B; (2/3) - MONOist&#xFF08;&#x30E2;&#x30CE;&#x30A4;&#x30B9;&#x30C8;&#xFF09;</a></li>
+</ol>
+</blockquote>
+<h2 class="mume-header" id="mack-trucks%E3%81%8Cota%E3%82%92%E5%B0%8E%E5%85%A5">Mack Trucks&#x304C;OTA&#x3092;&#x5C0E;&#x5165;</h2>
+
+<p>Mack Trucks&#x306F;&#x30A2;&#x30E1;&#x30EA;&#x30AB;&#x306E;&#x30C8;&#x30E9;&#x30C3;&#x30AF;&#x30E1;&#x30FC;&#x30AB;&#x30FC;&#x3067;&#x3001;1/12&#x9031;&#x306B;Anthem&#x3001;Pinnacle&#x3001;Granite&#x306E;3&#x30E2;&#x30C7;&#x30EB;&#x306B;OTA&#x304C;&#x6A19;&#x6E96;&#x88C5;&#x5099;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x3092;&#x767A;&#x8868;&#xFF08;2021/1/15&#xFF1A;&#x8A18;&#x4E8B;&#xFF09;&#x3002;&#x6700;&#x521D;&#x306E;2&#x5E74;&#x9593;&#x7121;&#x6599;&#x3067;&#x3001;&#x305D;&#x306E;&#x5F8C;&#x306F;&#x30B5;&#x30D6;&#x30B9;&#x30AF;&#x306B;&#x3088;&#x3063;&#x3066;&#x5EF6;&#x9577;&#x3002;</p>
+<p><strong>OTA&#x3067;&#x5909;&#x66F4;&#x53EF;&#x80FD;&#x306A;&#x5185;&#x5BB9;&#x4F8B;&#xFF1A;</strong></p>
+<ul>
+<li>&#x6700;&#x5927;&#x8D70;&#x884C;&#x901F;&#x5EA6;</li>
+<li>&#x30A2;&#x30A4;&#x30C9;&#x30EA;&#x30F3;&#x30B0;&#x30B9;&#x30C8;&#x30C3;&#x30D7;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;</li>
+<li>mDRIVE(&#x30C8;&#x30E9;&#x30F3;&#x30B9;&#x30DF;&#x30C3;&#x30B7;&#x30E7;&#x30F3;)&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3000;&#x306A;&#x3069;</li>
+</ul>
+<blockquote>
+<p>&#x53C2;&#x8003;&#xFF1A;</p>
+<ol>
+<li><a href="https://www.thetrucker.com/trucking-news/equipment-tech/mack-over-the-air-updates-now-standard-on-anthem-pinnacle-granite-models">Mack over-the-air updates now standard on Anthem, Pinnacle, Granite models | TheTrucker.com</a></li>
+<li><a href="https://www.fleetequipmentmag.com/mack-ota-updates-standard-driver-download-activation/">Mack OTA updates now standard with driver download activation</a></li>
+</ol>
+</blockquote>
+<h2 class="mume-header" id="sony-vision-s">Sony Vision-S</h2>
+
+<blockquote>
+<p><a href="https://response.jp/article/2021/01/14/342108.html">&#x30BD;&#x30CB;&#x30FC; VISION-S&#x3001;&#x30EC;&#x30D9;&#x30EB;2&#xFF0B;&#x306E;&#x81EA;&#x52D5;&#x904B;&#x8EE2;&#x6280;&#x8853;&#x3092;&#x5C0E;&#x5165;&#x2026;CES 2021 | &#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#xFF08;Response.jp&#xFF09;</a></p>
+</blockquote>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
