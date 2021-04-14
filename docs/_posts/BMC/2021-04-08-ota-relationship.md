@@ -11,7 +11,8 @@ graph LR
     AQ(fa:fa-cog Airbiquity)
     NV(fa:fa-cog NVIDIA)
     MS(fa:fa-cloud MicroSoft)
-    
+    VL(fa:fa-car Volvo)
+    GL(fa:fa-car Geely)
 
     VW --- L1(Ref. URL) --- MS
     MS --- L2(Ref. URL) --- BS
@@ -19,6 +20,7 @@ graph LR
     WR --- L4(Ref. URL) --- FD
     WR --- AQ
     AQ --- TT
+    VL --- GL
     
     click L1 "https://jidounten-lab.com/w_continental-ota-vw" "VW-MS"
     click L2 "https://jidounten-lab.com/u_bosch-microsoft-ota-opensource" "MS-Bosch"
@@ -34,6 +36,7 @@ graph LR
 
 - [Airbiquityがトヨタ自動車、デンソー、豊田通商、からの戦略的投資の受け入れを発表 :: Airbiquity](https://www.airbiquity.com/jp/news-press/press-releases/airbiquity)
 - [ウインドリバーとAirbiquityが提携 | Airbiquityのプレスリリース | 共同通信PRワイヤー](https://kyodonewsprwire.jp/release/201906057175)
+- [ボルボ、吉利系列の技術開発企業と合弁会社設立 次世代車載システム開発で協力 | 36Kr Japan | 最大級の中国テック・スタートアップ専門メディア](https://36kr.jp/126247/)
 
 WindRiver
 - [Wind River CarSync](https://cdn.windriver.com/japan/products/automotive/edge-sync/)
