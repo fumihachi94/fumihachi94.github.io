@@ -2,6 +2,9 @@
 
 ## Articles
 
+- 2021/08/21 : 2024年モデルから、Chevrolet、Cadillac、GMCの一部の車両に5G接続を導入予定.  
+[GMとAT&Tが2024年モデルから一部の車両に5G接続機能を提供すると発表 | TechCrunch Japan](https://jp.techcrunch.com/2021/08/20/2021-08-19-general-motors-and-att-will-offer-5g-connectivity-in-certain-vehicles-from-model-year-2024/)
+
 - 2021/07/24 : Cadillac Escalade 2021モデルではSuper CruiseをOTA更新可能.  
 [GMがアップグレードした自動運転支援システムSuper Cruiseを2022年に6車種に搭載へ | TechCrunch Japan](https://jp.techcrunch.com/2021/07/24/2021-07-22-gm-is-bringing-its-upgraded-hands-free-super-cruise-driving-system-to-six-vehicles-in-2022/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_sig=AQAAABpbltSXW1-o4cAJiHQN9nOx0qC49AjOceV-8s4AzprsZRlCKHknTVJLBaR1SXmtTUFxJiC7675kotF_afl_nxF1hZtosTygjvECBFZCX0qQlXcKM2fRj2MGzB9IE47vGZoJEIDYOvkABhBDa1L2ceQz__luavEJMoAng1WSwBzC)
 
