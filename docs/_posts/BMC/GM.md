@@ -26,6 +26,17 @@
 2021モデル 2WD LUXURY
 6.2L V8 engine
 
+## Super Cruise
+
+LiDAR及び高精度MAPを利用したハンズオフ半自動運転機能(Lv2)
+
+- ドライバが前方を注視していることが確認できないと作動しないとのこと。
+- ドライバモニタリングによるハンズオフで自動運転Lv2に相当
+
+参考記事：
+
+- 2021/07/23 : [GM’s Super Cruise is getting a big update — what you need to know | Tom's Guide](https://www.tomsguide.com/news/gms-super-cruise-is-getting-a-big-update-what-you-need-to-know)
+
 ## GMC
 
 OTA Software Update (おそらくOneStarの内容）
